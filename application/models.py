@@ -12,10 +12,8 @@ class User(models.Model):
     email = models.EmailField(verbose_name='邮箱', max_length=20, unique=True)
     phone = models.IntegerField(verbose_name='手机号', unique=True)
 
-    def __str__(self):
-        return self.name
-
     class Meta:
+        verbose_name = '用户'
         verbose_name_plural = '用户'
 
 
@@ -27,6 +25,10 @@ class Admin(models.Model):
     email = models.EmailField(verbose_name='邮箱', max_length=20, unique=True)
     phone = models.IntegerField(verbose_name='手机号', unique=True)
 
+    class Meta:
+        verbose_name = '管理员'
+        verbose_name_plural = '管理员'
+
 
 # 新闻
 class News(models.Model):
@@ -36,6 +38,10 @@ class News(models.Model):
     author = models.CharField(verbose_name='作者', max_length=15)
     content = models.TextField(verbose_name='内容', default='')
 
+    class Meta:
+        verbose_name = '新闻'
+        verbose_name_plural = '新闻'
+
 
 # 推送通知
 class Notify(models.Model):
@@ -44,6 +50,10 @@ class Notify(models.Model):
     date = models.DateTimeField(verbose_name='日期', default=timezone.now)
     content = models.TextField(verbose_name='内容', default='')
 
+    class Meta:
+        verbose_name = '推送通知'
+        verbose_name_plural = '推送通知'
+
 
 # 植物
 class Plant(models.Model):
@@ -51,6 +61,10 @@ class Plant(models.Model):
     user_id = models.ForeignKey(verbose_name='用户id', to=User, on_delete=models.CASCADE)
     name = models.CharField(verbose_name='植物名', max_length=20)
     address = models.CharField(verbose_name='植物产地', max_length=20)
+
+    class Meta:
+        verbose_name = '植物'
+        verbose_name_plural = '植物'
 
 
 # 数字身份证
@@ -61,6 +75,10 @@ class DigitalCard(models.Model):
     date = models.DateTimeField(verbose_name='日期', default=timezone.now)
     identifier = models.CharField(verbose_name='序列号', max_length=200)
 
+    class Meta:
+        verbose_name = '数字身份证'
+        verbose_name_plural = '数字身份证'
+
 
 # 相册
 class Album(models.Model):
@@ -70,6 +88,10 @@ class Album(models.Model):
     name = models.CharField(verbose_name='相册名', max_length=20)
     content = models.CharField(verbose_name='内容', max_length=50)
 
+    class Meta:
+        verbose_name = '相册'
+        verbose_name_plural = '相册'
+
 
 # 照片
 class Photo(models.Model):
@@ -78,6 +100,10 @@ class Photo(models.Model):
     title = models.CharField(verbose_name='标题', max_length=15)
     date = models.DateTimeField(verbose_name='日期', default=timezone.now)
     path = models.CharField(verbose_name='路径', max_length=100)
+
+    class Meta:
+        verbose_name = '照片'
+        verbose_name_plural = '照片'
 
 
 # 评判
@@ -91,11 +117,19 @@ class Judge(models.Model):
     content = models.TextField(verbose_name='内容', default='')
     vote = models.IntegerField(verbose_name='投票数', default=0)
 
+    class Meta:
+        verbose_name = '评判'
+        verbose_name_plural = '评判'
+
 
 # 排行榜
 class Board(models.Model):
     id = models.AutoField(verbose_name='id', primary_key=True, max_length=11)
     subject = models.CharField(verbose_name='主题', max_length=20)
+
+    class Meta:
+        verbose_name = '排行榜'
+        verbose_name_plural = '排行榜'
 
 
 # 类别
@@ -103,9 +137,17 @@ class Category(models.Model):
     id = models.AutoField(verbose_name='id', primary_key=True, max_length=11)
     name = models.CharField(verbose_name='类别名', max_length=10)
 
+    class Meta:
+        verbose_name = '类别'
+        verbose_name_plural = '类别'
 
-# 中间表
+
+# 植物-类别中间表
 class PlantToCategory(models.Model):
     id = models.AutoField(verbose_name='id', primary_key=True, max_length=11)
     plant_id = models.ForeignKey(verbose_name='植物id', to=Plant, on_delete=models.CASCADE)
     category_id = models.ForeignKey(verbose_name='类别id', to=Category, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = '植物-类别中间表'
+        verbose_name_plural = '植物-类别中间表'

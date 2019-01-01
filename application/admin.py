@@ -94,3 +94,11 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ['id', 'name']
     list_filter = ['name']
     search_fields = ['name']
+
+
+@admin.register(PlantToCategory)
+class PlantToCategoryAdmin(admin.ModelAdmin):
+    list_per_page = 10
+    list_display = ['id', 'plant_id', 'category_id']
+    list_filter = ['plant_id', 'category_id']
+    search_fields = ['plant_id', 'category_id']
