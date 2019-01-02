@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <title>首页</title>
-    <link rel="icon" href="{% static 'favicon.ico' %}"/>
+    <link rel="icon" href="/static/favicon.ico"/>
 
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <img src="{% static 'images/logo.png' %}" width="30" height="30"
-             class="d-inline-block align-top" alt="">
-        植物管家
-    </a>
+<div class="container-fluid">
+    <div class="row align-items-center action-bar">
+        <div class="col">
+            <a href="#">
+                <div class="row align-items-center">
+                    <div class="col">
+                        新闻
+                    </div>
+                    <div class="col">
+                        通知
+                    </div>
+                    <div class="col">
+                        排行榜
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col logo">
+            <a href="#">
+                <img src="/static/images/logo.png">
+            </a>
+        </div>
+        <div class="col text-login">
+            <a href="#">注册</a> | <a href="#">登录</a></div>
+    </div>
+</div>
 
-    <a class="navbar-brand" href="#">注册</a>
-    <a class="navbar-brand" href="#">登录</a>
-</nav>
-
-<script src="{% static 'js/bootstrap.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
+<script src="/static/js/bootstrap.js"></script>
+<script src="/static/js/main.js"></script>
 </body>
 </html>

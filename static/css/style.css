@@ -1,0 +1,29 @@
+body {
+    background: #f3f3f3;
+}
+
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+.action-bar {
+    height: 54px;
+    background: #ffffff;
+}
+
+.action-bar img {
+    width: 32px;
+    height: 32px;
+}
+
+.action-bar a {
+    color: #000000;
+}
+
+.logo{
+    text-align: center;
+}
+
+.text-login {
+    text-align: right;
+}
