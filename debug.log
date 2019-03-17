@@ -8,3 +8,18 @@ INFO 2019-03-17 19:34:45,644 def login
 INFO 2019-03-17 19:34:45,644 1@qq.com
 INFO 2019-03-17 19:34:45,645 1
 INFO 2019-03-17 19:34:45,645 yes
+INFO 2019-03-17 20:29:02,102 def login
+INFO 2019-03-17 20:29:02,104 2@qq.com
+INFO 2019-03-17 20:29:02,110 2
+2019-03-17 20:29:06,090 [Thread-16:18196] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view application.views.login didn't return an HttpResponse object. It returned None instead.
+INFO 2019-03-17 20:36:22,262 def account
+INFO 2019-03-17 20:36:36,168 def login
+INFO 2019-03-17 20:36:36,169 1@qq.com
+INFO 2019-03-17 20:36:36,169 2
+INFO 2019-03-17 20:36:36,170 no

@@ -1,12 +1,18 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 import logging
 
 logger = logging.getLogger('app.log')
 
 
+# 打印日志
+def debug(message):
+    logger.info(message)
+
+
 # Create your views here.
 def index(request):
-    logger.info('def index')
+    debug('def index')
     context = {'name': 'huang',
                '1': 'china'}
     return render(request, 'application/index.html', context)
@@ -14,28 +20,33 @@ def index(request):
 
 # 用户登录和注册页
 def account(request):
-    logger.info('def account')
-    context = {}
-    return render(request, 'application/login.html', context)
+    debug('def account')
+    context = {'message': '欢迎'}
+    return render(request, 'application/account.html', context)
 
 
 # 登录
 def login(request):
-    logger.info('def login')
+    debug('def login')
+
     email = request.POST['email']
     password = request.POST['password']
 
-    context = {'email': email,
-               'password': password}
+    debug(email)
+    debug(password)
 
-    logger.info(email)
-    logger.info(password)
     if email == '1@qq.com':
         if password == '1':
-            logger.info('yes')
-            return render(request, 'application/login.html', context)
+            debug('yes')
+            return HttpResponseRedirect('')
         else:
-            logger.info('no')
+            debug('密码错误')
+            context = {'message': '用户名错误'}
+            return render(request, 'application/account.html', context)
+    else:
+        debug('用户名错误或不存在')
+
+    
 
 
 # 注册
@@ -45,5 +56,5 @@ def registered():
 
 # 注册
 def demo(request):
-    logger.debug('user page')
+    debug('user page')
     return render(request, 'application/user.html')
