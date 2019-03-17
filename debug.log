@@ -23,3 +23,180 @@ INFO 2019-03-17 20:36:36,168 def login
 INFO 2019-03-17 20:36:36,169 1@qq.com
 INFO 2019-03-17 20:36:36,169 2
 INFO 2019-03-17 20:36:36,170 no
+INFO 2019-03-17 20:46:59,311 def login
+INFO 2019-03-17 20:46:59,312 1@qq.com
+INFO 2019-03-17 20:46:59,312 2
+INFO 2019-03-17 20:46:59,312 ÃÜÂë´íÎó
+INFO 2019-03-17 20:47:16,825 def login
+INFO 2019-03-17 20:47:16,825 1@qq.com
+INFO 2019-03-17 20:47:16,825 2
+INFO 2019-03-17 20:47:16,825 ÃÜÂë´íÎó
+INFO 2019-03-17 20:49:59,625 def login
+INFO 2019-03-17 20:49:59,625 1@qq.com
+INFO 2019-03-17 20:49:59,626 2
+INFO 2019-03-17 20:49:59,626 ÃÜÂë´íÎó
+INFO 2019-03-17 20:50:17,770 def login
+INFO 2019-03-17 20:50:17,770 1@qq.com
+INFO 2019-03-17 20:50:17,770 2
+INFO 2019-03-17 20:50:17,770 ÃÜÂë´íÎó
+INFO 2019-03-17 20:50:27,855 def login
+INFO 2019-03-17 20:50:27,856 11@qq.com
+INFO 2019-03-17 20:50:27,856 1
+INFO 2019-03-17 20:50:27,856 ÓÃ»§Ãû´íÎó»ò²»´æÔÚ
+INFO 2019-03-17 20:51:06,607 def login
+INFO 2019-03-17 20:51:06,607 1@qq.com
+INFO 2019-03-17 20:51:06,608 1
+INFO 2019-03-17 20:51:06,608 µÇÂ¼³É¹¦
+INFO 2019-03-17 20:51:43,427 def login
+INFO 2019-03-17 20:51:43,428 1@qq.com
+INFO 2019-03-17 20:51:43,428 1
+INFO 2019-03-17 20:51:43,428 µÇÂ¼³É¹¦
+INFO 2019-03-17 20:51:43,441 def index
+INFO 2019-03-17 20:51:49,667 def account
+INFO 2019-03-17 21:06:21,308 def login
+INFO 2019-03-17 21:06:21,308 1126184096@qq.com
+INFO 2019-03-17 21:06:21,309 1
+2019-03-17 21:06:24,181 [Thread-2:7832] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 42, in login
+    if email == user.email:
+AttributeError: 'NoneType' object has no attribute 'email'
+INFO 2019-03-17 21:07:13,802 def account
+INFO 2019-03-17 21:07:25,559 def login
+INFO 2019-03-17 21:07:25,559 1126184096@qq.com
+INFO 2019-03-17 21:07:25,559 11
+INFO 2019-03-17 21:07:25,571 None
+2019-03-17 21:07:25,867 [Thread-2:17848] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 43, in login
+    if email == user.email:
+AttributeError: 'NoneType' object has no attribute 'email'
+INFO 2019-03-17 21:12:06,513 def account
+INFO 2019-03-17 21:12:23,078 def login
+INFO 2019-03-17 21:12:23,078 1126184096@qq.com
+INFO 2019-03-17 21:12:23,078 1
+INFO 2019-03-17 21:12:23,095 None
+INFO 2019-03-17 21:12:37,190 def login
+INFO 2019-03-17 21:12:37,191 1126184096@qq.com
+INFO 2019-03-17 21:12:37,191 123
+INFO 2019-03-17 21:12:37,200 User object (1)
+INFO 2019-03-17 21:12:37,213 def index
+INFO 2019-03-17 21:14:45,115 def account
+INFO 2019-03-17 21:18:15,251 def account
+INFO 2019-03-17 21:32:35,382 def account
+INFO 2019-03-17 21:34:28,128 def account
+INFO 2019-03-17 21:36:03,514 def account
+INFO 2019-03-17 21:37:25,607 (<User: User object (2)>, False)
+2019-03-17 21:38:07,341 [Thread-3:15832] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/registered/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 486, in get_or_create
+    return self.get(**lookup), False
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+application.models.User.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 516, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 727, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1066, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 683, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '123@qq.com' for key 'email'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 68, in registered
+    user = User.objects.get_or_create(email=email, phone=phone, name=name, password=password)
+  File "D:\development\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 488, in get_or_create
+    return self._create_object_from_params(lookup, params)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 530, in _create_object_from_params
+    raise e
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 522, in _create_object_from_params
+    obj = self.create(**params)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 413, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "D:\development\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 516, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 727, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1066, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 683, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1062, "Duplicate entry '123@qq.com' for key 'email'")
+INFO 2019-03-17 21:45:23,121 (<User: User object (2)>, False)
+INFO 2019-03-17 21:45:41,287 (<User: User object (4)>, True)

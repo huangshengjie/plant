@@ -22,49 +22,48 @@
 
     <div class="tab-content">
         <div id="signup">
-            <h1>创建账户</h1>
+            <h1>{{ registered_title }}</h1>
 
-            <form action="/" method="post">
-
+            <form action="{% url 'registered' %}" method="post">
+                {% csrf_token %}
                 <div class="top-row">
                     <div class="field-wrap">
                         <label>
-                            First Name<span class="req">*</span>
+                            邮箱<span class="req">*</span>
                         </label>
-                        <input type="text" required autocomplete="off"/>
+                        <input type="email" name="email" required autocomplete="off"/>
                     </div>
 
                     <div class="field-wrap">
                         <label>
-                            Last Name<span class="req">*</span>
+                            手机号<span class="req">*</span>
                         </label>
-                        <input type="text" required autocomplete="off"/>
+                        <input type="tel" name="phone" required autocomplete="off"/>
                     </div>
                 </div>
 
                 <div class="field-wrap">
                     <label>
-                        Email Address<span class="req">*</span>
+                        用户名<span class="req">*</span>
                     </label>
-                    <input type="email" required autocomplete="off"/>
+                    <input type="text" name="name" required autocomplete="off"/>
                 </div>
 
                 <div class="field-wrap">
                     <label>
-                        Set A Password<span class="req">*</span>
+                        密码<span class="req">*</span>
                     </label>
-                    <input type="password" required autocomplete="off"/>
+                    <input type="password" name="password" required autocomplete="off"/>
                 </div>
 
-                <button type="submit" class="button button-block"/>
-                注册</button>
+                <button type="submit" class="button button-block"/>注册</button>
 
             </form>
 
         </div>
 
         <div id="login">
-            <h1>{{ message }}</h1>
+            <h1>{{ login_title }}</h1>
 
             <form action="{% url 'login' %}" method="post">
                 {% csrf_token %}

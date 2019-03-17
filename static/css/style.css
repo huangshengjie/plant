@@ -1,29 +1,17 @@
 body {
-    background: #f3f3f3;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-a, a:visited, a:hover, a:active {
-    text-decoration: none;
+main {
+    flex: 1 0 auto;
 }
 
-.action-bar {
-    height: 54px;
-    background: #ffffff;
+.horizontally-centered {
+    margin: 24px auto;
 }
 
-.action-bar img {
-    width: 32px;
-    height: 32px;
-}
-
-.action-bar a {
-    color: #000000;
-}
-
-.logo {
-    text-align: center;
-}
-
-.text-login {
-    text-align: right;
+.horizontally-margin {
+    margin: 24px 15%;
 }
