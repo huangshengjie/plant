@@ -10,7 +10,7 @@ class User(models.Model):
     name = models.CharField(verbose_name='用户名', max_length=10, unique=True)
     password = models.CharField(verbose_name='密码', max_length=16)
     email = models.EmailField(verbose_name='邮箱', max_length=20, unique=True)
-    phone = models.IntegerField(verbose_name='手机号', unique=True)
+    phone = models.CharField(verbose_name='手机号', unique=True, max_length=20)
 
     class Meta:
         verbose_name = '用户'

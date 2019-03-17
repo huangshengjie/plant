@@ -1,0 +1,914 @@
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.010) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.007) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.010) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+"POST / HTTP/1.1" 200 3511
+"GET /static/favicon.ico HTTP/1.1" 200 9662
+"POST / HTTP/1.1" 200 3511
+"GET /static/favicon.ico HTTP/1.1" 200 9662
+"POST / HTTP/1.1" 200 3511
+"GET /static/favicon.ico HTTP/1.1" 200 9662
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.009) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+Exception while resolving variable 'email' in template 'application/index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [email] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x04A5BD20>>, 'request': <WSGIRequest: GET '/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x04A5BA08>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x04CD2E30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0497B230>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'name': 'huang', '1': 'china'}]
+Exception while resolving variable 'password' in template 'application/index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [password] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x04A5BD20>>, 'request': <WSGIRequest: GET '/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x04A5BA08>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x04CD2E30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0497B230>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'name': 'huang', '1': 'china'}]
+"GET / HTTP/1.1" 200 3514
+"GET /account HTTP/1.1" 200 3153
+"GET /static/login/css/style.css HTTP/1.1" 304 0
+"GET /static/images/img-1.jpg HTTP/1.1" 304 0
+Exception while resolving variable 'email' in template 'application/index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [email] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x04CCFF18>>, 'request': <WSGIRequest: POST '/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x04CCFED0>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x04CE6730>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x04CD2A70>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'name': 'huang', '1': 'china'}]
+Exception while resolving variable 'password' in template 'application/index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [password] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x04CCFF18>>, 'request': <WSGIRequest: POST '/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x04CCFED0>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x04CE6730>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x04CD2A70>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'name': 'huang', '1': 'china'}]
+"POST / HTTP/1.1" 200 3514
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.008) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+"POST / HTTP/1.1" 200 3518
+"GET /static/favicon.ico HTTP/1.1" 200 9662
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:37:49.057758' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:37:49.057758', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.002) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+Exception while resolving variable 'is_popup' in template 'admin/app_index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x011AA390>>, 'request': <WSGIRequest: GET '/admin/application/'>, 'user': <SimpleLazyObject: <User: Admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x014780B0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x04AD36D0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django 站点管理员', 'site_header': 'Django 管理', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}, {'name': '认证和授权', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}, {'name': '组', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'title': '植物管家 管理', 'app_list': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}], 'app_label': 'application', 'LANGUAGE_CODE': 'zh-Hans', 'LANGUAGE_BIDI': False}]
+Exception while resolving variable 'is_popup' in template 'admin/app_index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x011AA390>>, 'request': <WSGIRequest: GET '/admin/application/'>, 'user': <SimpleLazyObject: <User: Admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x014780B0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x04AD36D0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django 站点管理员', 'site_header': 'Django 管理', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}, {'name': '认证和授权', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}, {'name': '组', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'title': '植物管家 管理', 'app_list': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}], 'app_label': 'application', 'LANGUAGE_CODE': 'zh-Hans', 'LANGUAGE_BIDI': False}]
+"GET /admin/application/ HTTP/1.1" 200 7493
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:37:57.157961' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:37:57.157961', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.002) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+(0.011) SELECT COUNT(*) AS `__count` FROM `application_user`; args=()
+(0.000) SELECT COUNT(*) AS `__count` FROM `application_user`; args=()
+(0.001) SELECT `application_user`.`id`, `application_user`.`name`, `application_user`.`password`, `application_user`.`email`, `application_user`.`phone` FROM `application_user` ORDER BY `application_user`.`id` DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [errors] in None
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [show] in [{'True': True, 'False': False, 'None': None, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x01463D20>>}]
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_multipart] in None
+"GET /admin/application/user/ HTTP/1.1" 200 3513
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.009) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:37:57.348786' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:37:57.348786', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.011) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 7684
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.010) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:38:01.602035' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:38:01.602035', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.018) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+(0.009) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'application' AND `django_content_type`.`model` = 'user'); args=('application', 'user')
+"GET /admin/application/user/add/ HTTP/1.1" 200 5444
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:38:01.905092' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:38:01.905092', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.002) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 7684
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:38:33.855828' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:38:33.855828', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+(0.015) SELECT (1) AS `a` FROM `application_user` WHERE `application_user`.`name` = 'hsj'  LIMIT 1; args=('hsj',)
+(0.001) SELECT (1) AS `a` FROM `application_user` WHERE `application_user`.`email` = '1126184096@qq.com'  LIMIT 1; args=('1126184096@qq.com',)
+"POST /admin/application/user/add/ HTTP/1.1" 200 5667
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:38:34.056211' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:38:34.056211', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.002) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 7684
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:41:46.410059' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:41:46.410059', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+Exception while resolving variable 'is_popup' in template 'admin/app_index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x01463BB8>>, 'request': <WSGIRequest: GET '/admin/application/'>, 'user': <SimpleLazyObject: <User: Admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0152DCF0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x015311B0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django 站点管理员', 'site_header': 'Django 管理', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}, {'name': '认证和授权', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}, {'name': '组', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'title': '植物管家 管理', 'app_list': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}], 'app_label': 'application', 'LANGUAGE_CODE': 'zh-Hans', 'LANGUAGE_BIDI': False}]
+Exception while resolving variable 'is_popup' in template 'admin/app_index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x01463BB8>>, 'request': <WSGIRequest: GET '/admin/application/'>, 'user': <SimpleLazyObject: <User: Admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0152DCF0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x015311B0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django 站点管理员', 'site_header': 'Django 管理', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}, {'name': '认证和授权', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}, {'name': '组', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'title': '植物管家 管理', 'app_list': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}], 'app_label': 'application', 'LANGUAGE_CODE': 'zh-Hans', 'LANGUAGE_BIDI': False}]
+"GET /admin/application/ HTTP/1.1" 200 7493
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:42:00.928848' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:42:00.928848', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.002) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+(0.010) SELECT COUNT(*) AS `__count` FROM `application_user`; args=()
+(0.001) SELECT COUNT(*) AS `__count` FROM `application_user`; args=()
+(0.000) SELECT `application_user`.`id`, `application_user`.`name`, `application_user`.`password`, `application_user`.`email`, `application_user`.`phone` FROM `application_user` ORDER BY `application_user`.`id` DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [errors] in None
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [show] in [{'True': True, 'False': False, 'None': None, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x03C530C0>>}]
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_multipart] in None
+"GET /admin/application/user/ HTTP/1.1" 200 3513
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:42:01.073184' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:42:01.073184', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.005) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 7684
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:42:04.809325' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:42:04.809325', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.002) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+"GET /admin/application/user/add/ HTTP/1.1" 200 5444
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:42:04.941726' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:42:04.941726', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 7684
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.009) SHOW FULL TABLES; args=None
+(0.002) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:43:20.925060' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:43:20.925060', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.002) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+Exception while resolving variable 'is_popup' in template 'admin/app_index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x041DACD8>>, 'request': <WSGIRequest: GET '/admin/application/'>, 'user': <SimpleLazyObject: <User: Admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x044C9CB0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x041D2F70>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django 站点管理员', 'site_header': 'Django 管理', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}, {'name': '认证和授权', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}, {'name': '组', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'title': '植物管家 管理', 'app_list': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}], 'app_label': 'application', 'LANGUAGE_CODE': 'zh-Hans', 'LANGUAGE_BIDI': False}]
+Exception while resolving variable 'is_popup' in template 'admin/app_index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x041DACD8>>, 'request': <WSGIRequest: GET '/admin/application/'>, 'user': <SimpleLazyObject: <User: Admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x044C9CB0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x041D2F70>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django 站点管理员', 'site_header': 'Django 管理', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}, {'name': '认证和授权', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}, {'name': '组', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'title': '植物管家 管理', 'app_list': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}], 'app_label': 'application', 'LANGUAGE_CODE': 'zh-Hans', 'LANGUAGE_BIDI': False}]
+"GET /admin/application/ HTTP/1.1" 200 7493
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:43:23.711618' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:43:23.711618', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+Exception while resolving variable 'is_popup' in template 'admin/app_index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x041F99C0>>, 'request': <WSGIRequest: GET '/admin/application/'>, 'user': <SimpleLazyObject: <User: Admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x044E1E50>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x044E1110>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django 站点管理员', 'site_header': 'Django 管理', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}, {'name': '认证和授权', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}, {'name': '组', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'title': '植物管家 管理', 'app_list': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}], 'app_label': 'application', 'LANGUAGE_CODE': 'zh-Hans', 'LANGUAGE_BIDI': False}]
+Exception while resolving variable 'is_popup' in template 'admin/app_index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x041F99C0>>, 'request': <WSGIRequest: GET '/admin/application/'>, 'user': <SimpleLazyObject: <User: Admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x044E1E50>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x044E1110>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django 站点管理员', 'site_header': 'Django 管理', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}, {'name': '认证和授权', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}, {'name': '组', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'title': '植物管家 管理', 'app_list': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}], 'app_label': 'application', 'LANGUAGE_CODE': 'zh-Hans', 'LANGUAGE_BIDI': False}]
+"GET /admin/application/ HTTP/1.1" 200 7493
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:43:27.183341' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:43:27.183341', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+(0.009) SELECT COUNT(*) AS `__count` FROM `application_user`; args=()
+(0.001) SELECT COUNT(*) AS `__count` FROM `application_user`; args=()
+(0.000) SELECT `application_user`.`id`, `application_user`.`name`, `application_user`.`password`, `application_user`.`email`, `application_user`.`phone` FROM `application_user` ORDER BY `application_user`.`id` DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [errors] in None
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [show] in [{'True': True, 'False': False, 'None': None, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x044BDC00>>}]
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_multipart] in None
+"GET /admin/application/user/ HTTP/1.1" 200 3513
+(0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:43:27.331146' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:43:27.331146', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 7684
+(0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:43:30.163458' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:43:30.163458', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.002) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+(0.009) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'application' AND `django_content_type`.`model` = 'user'); args=('application', 'user')
+"GET /admin/application/user/add/ HTTP/1.1" 200 5454
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:43:30.298865' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:43:30.298865', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 7684
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:43:50.420984' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:43:50.420984', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+(0.010) SELECT (1) AS `a` FROM `application_user` WHERE `application_user`.`name` = 'hsj'  LIMIT 1; args=('hsj',)
+(0.000) SELECT (1) AS `a` FROM `application_user` WHERE `application_user`.`email` = '1126184096@qq.com'  LIMIT 1; args=('1126184096@qq.com',)
+(0.000) SELECT (1) AS `a` FROM `application_user` WHERE `application_user`.`phone` = '18940980522'  LIMIT 1; args=('18940980522',)
+(0.001) INSERT INTO `application_user` (`name`, `password`, `email`, `phone`) VALUES ('hsj', '123', '1126184096@qq.com', '18940980522'); args=['hsj', '123', '1126184096@qq.com', '18940980522']
+(0.001) INSERT INTO `django_admin_log` (`action_time`, `user_id`, `content_type_id`, `object_id`, `object_repr`, `action_flag`, `change_message`) VALUES ('2019-03-17 09:43:50.452727', 1, 12, '1', 'User object (1)', 1, '[{\"added\": {}}]'); args=['2019-03-17 09:43:50.452727', 1, 12, '1', 'User object (1)', 1, '[{"added": {}}]']
+"POST /admin/application/user/add/ HTTP/1.1" 302 0
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:43:50.467644' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:43:50.467644', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+(0.005) SELECT COUNT(*) AS `__count` FROM `application_user`; args=()
+(0.000) SELECT COUNT(*) AS `__count` FROM `application_user`; args=()
+(0.000) SELECT `application_user`.`id`, `application_user`.`name`, `application_user`.`password`, `application_user`.`email`, `application_user`.`phone` FROM `application_user` ORDER BY `application_user`.`id` DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [errors] in None
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [show] in [{'True': True, 'False': False, 'None': None, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x03463300>>}]
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_multipart] in None
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [non_field_errors] in None
+"GET /admin/application/user/ HTTP/1.1" 200 5627
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:43:50.635680' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:43:50.635680', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.002) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 7684
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.008) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+"GET /account HTTP/1.1" 200 3153
+"GET /static/login/css/style.css HTTP/1.1" 304 0
+"GET /static/login/js/index.js HTTP/1.1" 304 0
+"GET /static/images/img-1.jpg HTTP/1.1" 304 0
+"GET /account HTTP/1.1" 200 3153
+"POST / HTTP/1.1" 200 3518
+"GET /account HTTP/1.1" 200 3153
+"POST / HTTP/1.1" 200 3518
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 09:59:51.532172' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 09:59:51.532172', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.003) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00F64B70>>, 'request': <WSGIRequest: GET '/admin/'>, 'user': <SimpleLazyObject: <User: Admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x013FC5D0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x04503590>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django 站点管理员', 'site_header': 'Django 管理', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}, {'name': '认证和授权', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}, {'name': '组', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'title': '站点管理', 'app_list': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}, {'name': '认证和授权', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}, {'name': '组', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'LANGUAGE_CODE': 'zh-Hans', 'LANGUAGE_BIDI': False}]
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "D:\development\Python\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00F64B70>>, 'request': <WSGIRequest: GET '/admin/'>, 'user': <SimpleLazyObject: <User: Admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x013FC5D0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x04503590>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django 站点管理员', 'site_header': 'Django 管理', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}, {'name': '认证和授权', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}, {'name': '组', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'title': '站点管理', 'app_list': [{'name': '植物管家', 'app_label': 'application', 'app_url': '/admin/application/', 'has_module_perms': True, 'models': [{'name': '排行榜', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/board/', 'add_url': '/admin/application/board/add/'}, {'name': '推送通知', 'object_name': 'Notify', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/notify/', 'add_url': '/admin/application/notify/add/'}, {'name': '数字身份证', 'object_name': 'DigitalCard', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/digitalcard/', 'add_url': '/admin/application/digitalcard/add/'}, {'name': '新闻', 'object_name': 'News', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/news/', 'add_url': '/admin/application/news/add/'}, {'name': '植物', 'object_name': 'Plant', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/plant/', 'add_url': '/admin/application/plant/add/'}, {'name': '植物-类别中间表', 'object_name': 'PlantToCategory', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/planttocategory/', 'add_url': '/admin/application/planttocategory/add/'}, {'name': '照片', 'object_name': 'Photo', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/photo/', 'add_url': '/admin/application/photo/add/'}, {'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/user/', 'add_url': '/admin/application/user/add/'}, {'name': '相册', 'object_name': 'Album', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/album/', 'add_url': '/admin/application/album/add/'}, {'name': '管理员', 'object_name': 'Admin', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/admin/', 'add_url': '/admin/application/admin/add/'}, {'name': '类别', 'object_name': 'Category', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/category/', 'add_url': '/admin/application/category/add/'}, {'name': '评判', 'object_name': 'Judge', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/application/judge/', 'add_url': '/admin/application/judge/add/'}]}, {'name': '认证和授权', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': '用户', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}, {'name': '组', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'LANGUAGE_CODE': 'zh-Hans', 'LANGUAGE_BIDI': False}]
+(0.014) SELECT `django_admin_log`.`id`, `django_admin_log`.`action_time`, `django_admin_log`.`user_id`, `django_admin_log`.`content_type_id`, `django_admin_log`.`object_id`, `django_admin_log`.`object_repr`, `django_admin_log`.`action_flag`, `django_admin_log`.`change_message`, `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined`, `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_admin_log` INNER JOIN `auth_user` ON (`django_admin_log`.`user_id` = `auth_user`.`id`) LEFT OUTER JOIN `django_content_type` ON (`django_admin_log`.`content_type_id` = `django_content_type`.`id`) WHERE `django_admin_log`.`user_id` = 1 ORDER BY `django_admin_log`.`action_time` DESC  LIMIT 10; args=(1,)
+"GET /admin/ HTTP/1.1" 200 9347
+"GET /account HTTP/1.1" 200 3158
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 10:04:52.736996' AND `django_session`.`session_key` = 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg'); args=('2019-03-17 10:04:52.736996', 'zqw9jdvjg0xrd7eixsrsevjui8omjdfg')
+(0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+Internal Server Error: /login
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view application.views.login didn't return an HttpResponse object. It returned None instead.
+"POST /login HTTP/1.1" 500 58975
+"POST /login HTTP/1.1" 200 3158
