@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 import logging
@@ -14,9 +15,14 @@ def debug(message):
 
 # Create your views here.
 def index(request):
-    items = map(str, range(10))
-    context = {'items': items}
-    return render(request, 'application/index.html', context)
+    # items = map(str, range(10))
+    # context = {'items': items}
+    news_list = News.objects.all()
+    paginator = Paginator(news_list, 2)  # Show 2 contacts per page
+
+    page = request.GET.get('page')
+    news = paginator.get_page(page)
+    return render(request, 'application/index.html', {'news': news})
 
 
 # 用户登录和注册页

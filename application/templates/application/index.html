@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
 <div class="navbar-fixed">
@@ -28,7 +28,7 @@
 </div>
 
 <ul class="collection with-header horizontally-margin">
-    {% for item in items %}
+    {% for new in news %}
         <li class="collection-item">
             <div class="col s12 m7">
                 <div class="card horizontal">
@@ -51,14 +51,36 @@
     {% endfor %}
 </ul>
 
+{#<ul class="pagination horizontally-centered">#}
+{#    <li class="disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>#}
+{#    <li class="active"><a href="#">1</a></li>#}
+{#    <li class="waves-effect"><a href="#">2</a></li>#}
+{#    <li class="waves-effect"><a href="#">3</a></li>#}
+{#    <li class="waves-effect"><a href="#">4</a></li>#}
+{#    <li class="waves-effect"><a href="#">5</a></li>#}
+{#    <li class="waves-effect"><a href="#"><i class="material-icons">chevron_right</i></a></li>#}
+{#</ul>#}
+
 <ul class="pagination horizontally-centered">
-    <li class="disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
-    <li class="active"><a href="#">1</a></li>
-    <li class="waves-effect"><a href="#">2</a></li>
-    <li class="waves-effect"><a href="#">3</a></li>
-    <li class="waves-effect"><a href="#">4</a></li>
-    <li class="waves-effect"><a href="#">5</a></li>
-    <li class="waves-effect"><a href="#"><i class="material-icons">chevron_right</i></a></li>
+    {% if news.has_previous %}
+        <li class="waves-effect"><a href="?page={{ news.previous_page_number }}"><i
+                class="material-icons">chevron_left</i></a></li>
+    {% else %}
+        <li class="disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
+    {% endif %}
+    {% for page_num in news.paginator.page_range %}
+        {% if page_num == news.number %}
+            <li class="active"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+        {% else %}
+            <li class="waves-effect"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+        {% endif %}
+    {% endfor %}
+    {% if news.has_next %}
+        <li class="waves-effect"><a href="?page={{ news.next_page_number }}"><i
+                class="material-icons">chevron_right</i></a></li>
+    {% else %}
+        <li class="disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
+    {% endif %}
 </ul>
 
 <footer class="page-footer">
