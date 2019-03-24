@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad386f54-2a86-4149-b91f-d24de7f7bbec" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/application/templates/application/include/nav.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/templates/application/news_content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/templates/application/user_center.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/templates/application/include/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/templates/application/include/nav.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/templates/application/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/templates/application/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/templates/application/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/templates/application/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/templates/application/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/templates/application/include/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/templates/application/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+            <state relative-caret-position="158">
+              <caret line="111" column="40" lean-forward="true" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -101,8 +93,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+            <state relative-caret-position="391">
+              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -116,11 +108,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="nav.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/templates/application/include/nav.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+            <state relative-caret-position="181">
+              <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,9 +167,9 @@
         <option value="$PROJECT_DIR$/application/templates/application/include/footer.html" />
         <option value="$PROJECT_DIR$/application/templates/application/user_center.html" />
         <option value="$PROJECT_DIR$/application/urls.py" />
-        <option value="$PROJECT_DIR$/application/templates/application/include/nav.html" />
         <option value="$PROJECT_DIR$/static/js/main.js" />
         <option value="$PROJECT_DIR$/application/templates/application/index.html" />
+        <option value="$PROJECT_DIR$/application/templates/application/include/nav.html" />
       </list>
     </option>
   </component>
@@ -342,7 +337,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32881355" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.29491526" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32881355" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18813427" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18813427" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -627,20 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/templates/application/include/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -655,10 +636,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/templates/application/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+        <state relative-caret-position="158">
+          <caret line="111" column="40" lean-forward="true" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/templates/application/include/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
