@@ -10,105 +10,103 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        .bannar {
+            margin-left: 14%;
+            margin-right: 14%;
+            margin-top: -74px;
+        }
+
+        table {
+            margin-left: 12%;
+            margin-right: 12%;
+        }
+    </style>
 </head>
 <body>
-<div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">植物管家</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#">相册</a></li>
-                <li><a href="#">排行榜</a></li>
-                <li><a href="#">新闻中心</a></li>
-                <li><a href="#">活动</a></li>
-                <li><a href="#">用户中心</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
+{% include 'application/include/nav.html' %}
 
-<ul class="collection with-header horizontally-margin">
-    {% for new in news %}
-        <li class="collection-item">
-            <div class="col s12 m7">
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">查看详情</a>
-                            <a class="btn-floating red"><i class="material-icons">art_track</i></a>
-                            <a class="btn-floating green"><i class="material-icons">send</i></a>
+{#<div class="bannar">#}
+{#    <div class="carousel">#}
+{#        <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>#}
+{#        <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>#}
+{#        <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>#}
+{#        <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>#}
+{#        <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>#}
+{#        <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>#}
+{#        <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>#}
+{#        <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>#}
+{#        <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>#}
+{#        <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>#}
+{#    </div>#}
+{#</div>#}
+
+<div>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{% static 'images/sample-1.jpg' %}">
+                                <span class="card-title">Card Title</span>
+                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                        class="material-icons">add</i></a>
+                            </div>
+                            <div class="card-content">
+                                <p>I am a very simple card. I am good at containing small</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </li>
-    {% endfor %}
-</ul>
+            </td>
+            <td>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{% static 'images/sample-1.jpg' %}">
+                                <span class="card-title">Card Title</span>
+                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                        class="material-icons">add</i></a>
+                            </div>
+                            <div class="card-content">
+                                <p>I am a very simple card. I am good at containing small</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{% static 'images/sample-1.jpg' %}">
+                                <span class="card-title">Card Title</span>
+                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                        class="material-icons">add</i></a>
+                            </div>
+                            <div class="card-content">
+                                <p>I am a very simple card. I am good at containing small</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-{#<ul class="pagination horizontally-centered">#}
-{#    <li class="disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>#}
-{#    <li class="active"><a href="#">1</a></li>#}
-{#    <li class="waves-effect"><a href="#">2</a></li>#}
-{#    <li class="waves-effect"><a href="#">3</a></li>#}
-{#    <li class="waves-effect"><a href="#">4</a></li>#}
-{#    <li class="waves-effect"><a href="#">5</a></li>#}
-{#    <li class="waves-effect"><a href="#"><i class="material-icons">chevron_right</i></a></li>#}
-{#</ul>#}
-
-<ul class="pagination horizontally-centered">
-    {% if news.has_previous %}
-        <li class="waves-effect"><a href="?page={{ news.previous_page_number }}"><i
-                class="material-icons">chevron_left</i></a></li>
-    {% else %}
-        <li class="disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
-    {% endif %}
-    {% for page_num in news.paginator.page_range %}
-        {% if page_num == news.number %}
-            <li class="active"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
-        {% else %}
-            <li class="waves-effect"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
-        {% endif %}
-    {% endfor %}
-    {% if news.has_next %}
-        <li class="waves-effect"><a href="?page={{ news.next_page_number }}"><i
-                class="material-icons">chevron_right</i></a></li>
-    {% else %}
-        <li class="disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
-    {% endif %}
-</ul>
-
-<footer class="page-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
-                    content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-        </div>
-    </div>
-</footer>
+{% include 'application/include/footer.html' %}
 
 <div class="fixed-action-btn">
     <a class="btn-floating btn-large red">

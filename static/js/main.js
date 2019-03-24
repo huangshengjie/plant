@@ -7,3 +7,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//modal init
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {
+
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems, {
+        duration: 240,
+        shift: 10,
+        indicators: true,
+        padding: 22,
+        dist: -25
+    });
+});

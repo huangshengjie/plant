@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>用户中心</title>
+
+    {% load static %}
+    <link rel="icon" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        .left-menu li {
+            font-size: 20px;
+            margin-top: 24px;
+        }
+
+        .left-menu li:first-child {
+            margin-top: 36px;
+        }
+    </style>
+</head>
+<body>
+{% include 'application/include/nav.html' %}
+
+<div class="row container">
+    <div class="col s3">
+        <ul class="left-menu">
+            <li>
+                <button id="btn_basic" class="btn waves-effect waves-light">
+                    基本信息<i class="material-icons right">send</i>
+                </button>
+            </li>
+            <li>
+                <button id="btn_plant" class="btn waves-effect waves-light">
+                    我的植物<i class="material-icons right">send</i>
+                </button>
+            </li>
+            <li>
+                <button id="btn_gallery" class="btn waves-effect waves-light">
+                    我的相册<i class="material-icons right">send</i>
+                </button>
+            </li>
+            <li>
+                <button id="btn_update" class="btn waves-effect waves-light">
+                    修改账户<i class="material-icons right">send</i>
+                </button>
+            </li>
+            <li>
+                <button data-target="modal_sign_out" class="btn waves-effect waves-light modal-trigger">
+                    退出登录<i class="material-icons right">send</i>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col s9">
+        <div id="section_basic">
+            <h5>基本信息</h5>
+            <div class="divider"></div>
+            <div class="section">
+                <h5>用户名</h5>
+                <p>黄胜杰</p>
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <h5>密码</h5>
+                <p>123456</p>
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <h5>邮箱</h5>
+                <p>1126184096@qq.com</p>
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <h5>手机号</h5>
+                <p>18940980522</p>
+            </div>
+        </div>
+
+        <div id="section_update" style="display: none">
+            <h5>修改账户</h5>
+            <div class="divider"></div>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="icon_prefix2_name" class="materialize-textarea" maxlength="10"></textarea>
+                            <label for="icon_prefix2_name">用户名</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="icon_prefix2_password" class="materialize-textarea" maxlength="10"></textarea>
+                            <label for="icon_prefix2_password">密码</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="icon_prefix2_email" class="materialize-textarea" maxlength="10"></textarea>
+                            <label for="icon_prefix2_email">邮箱</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="icon_prefix2_phone" class="materialize-textarea" maxlength="10"></textarea>
+                            <label for="icon_prefix2_phone">手机号</label>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">提交
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal_sign_out" class="modal">
+    <div class="modal-content">
+        <h4>退出登录</h4>
+        <p>你将退出此账号</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">取消</a>
+        <a href="{% url 'sign_out' %}" class="modal-close waves-effect waves-green btn-flat">确定退出</a>
+    </div>
+</div>
+
+{% include 'application/include/footer.html' %}
+
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+        <i class="large material-icons">menu</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+    </ul>
+</div>
+
+<script src="{% static 'js/materialize.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+<script>
+    document.getElementById("btn_basic").onclick = function () {
+        resetStatus();
+        document.getElementById("section_basic").style.display = "block";
+    };
+    document.getElementById("btn_plant").onclick = function () {
+        resetStatus();
+    };
+    document.getElementById("btn_gallery").onclick = function () {
+        resetStatus();
+    };
+    document.getElementById("btn_update").onclick = function () {
+        resetStatus();
+        document.getElementById("section_update").style.display = "block";
+    };
+
+    function resetStatus() {
+        document.getElementById("section_basic").style.display = "none";
+        document.getElementById("section_update").style.display = "none";
+    }
+</script>
+</body>
+</html>

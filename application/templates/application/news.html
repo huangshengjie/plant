@@ -1,11 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-hans">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>首页</title>
+
+    {% load static %}
+    <link rel="icon" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
+{% include 'application/include/nav.html' %}
 
+<ul class="collection with-header horizontally-margin">
+    {% for new in news %}
+        <li class="collection-item">
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="https://lorempixel.com/100/190/nature/6">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="/plant/news_content?id={{ new.id }}">查看详情</a>
+                            <a class="btn-floating red"><i class="material-icons">art_track</i></a>
+                            <a class="btn-floating green"><i class="material-icons">send</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
 
+{#<ul class="pagination horizontally-centered">#}
+{#    <li class="disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>#}
+{#    <li class="active"><a href="#">1</a></li>#}
+{#    <li class="waves-effect"><a href="#">2</a></li>#}
+{#    <li class="waves-effect"><a href="#">3</a></li>#}
+{#    <li class="waves-effect"><a href="#">4</a></li>#}
+{#    <li class="waves-effect"><a href="#">5</a></li>#}
+{#    <li class="waves-effect"><a href="#"><i class="material-icons">chevron_right</i></a></li>#}
+{#</ul>#}
+
+<ul class="pagination horizontally-centered">
+    {% if news.has_previous %}
+        <li class="waves-effect"><a href="?page={{ news.previous_page_number }}"><i
+                class="material-icons">chevron_left</i></a></li>
+    {% else %}
+        <li class="disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
+    {% endif %}
+    {% for page_num in news.paginator.page_range %}
+        {% if page_num == news.number %}
+            <li class="active"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+        {% else %}
+            <li class="waves-effect"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+        {% endif %}
+    {% endfor %}
+    {% if news.has_next %}
+        <li class="waves-effect"><a href="?page={{ news.next_page_number }}"><i
+                class="material-icons">chevron_right</i></a></li>
+    {% else %}
+        <li class="disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
+    {% endif %}
+</ul>
+
+{% include 'application/include/footer.html' %}
+
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+        <i class="large material-icons">menu</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+    </ul>
+</div>
+
+<script src="{% static 'js/materialize.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

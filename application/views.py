@@ -1,7 +1,8 @@
-from django.core.paginator import Paginator
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
 import logging
+
+from django.core.paginator import Paginator
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
 
 from application.models import *
 
@@ -13,16 +14,34 @@ def debug(message):
     logger.info(message)
 
 
-# Create your views here.
 def index(request):
-    # items = map(str, range(10))
-    # context = {'items': items}
+    context = {'news': ''}
+    return render(request, 'application/index.html', context)
+
+
+def news(request):
     news_list = News.objects.all()
     paginator = Paginator(news_list, 2)  # Show 2 contacts per page
 
     page = request.GET.get('page')
     news = paginator.get_page(page)
-    return render(request, 'application/index.html', {'news': news})
+    context = {'news': news}
+    return render(request, 'application/news.html', context)
+
+
+def news_content(request):
+    news_id = request.GET['id']
+    news = News.objects.filter(id=news_id).first()
+    context = {'news': news}
+    return render(request, 'application/news_content.html', context)
+
+
+def user_center(request):
+    return render(request, 'application/user_center.html')
+
+
+def sign_out(request):
+    return render(request, 'application/account.html')
 
 
 # 用户登录和注册页
@@ -79,8 +98,3 @@ def registered(request):
         context = {'login_title': '欢迎',
                    'registered_title': '注册失败'}
         return render(request, 'application/account.html', context)
-
-
-def demo(request):
-    debug('user page')
-    return render(request, 'application/user.html')
