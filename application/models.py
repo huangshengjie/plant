@@ -2,8 +2,6 @@ from django.db import models
 from django.utils import timezone
 
 
-# Create your models here.
-
 # 用户表
 class User(models.Model):
     id = models.AutoField(verbose_name='id', primary_key=True, max_length=11)

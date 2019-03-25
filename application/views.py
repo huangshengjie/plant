@@ -36,6 +36,23 @@ def news_content(request):
     return render(request, 'application/news_content.html', context)
 
 
+def notify(request):
+    notify_list = Notify.objects.all()
+    paginator = Paginator(notify_list, 2)  # Show 2 contacts per page
+
+    page = request.GET.get('page')
+    notify = paginator.get_page(page)
+    context = {'notify': notify}
+    return render(request, 'application/notify.html', context)
+
+
+def notify_content(request):
+    notify_id = request.GET['id']
+    notify = Notify.objects.filter(id=notify_id).first()
+    context = {'notify': notify}
+    return render(request, 'application/notify_content.html', context)
+
+
 def user_center(request):
     return render(request, 'application/user_center.html')
 

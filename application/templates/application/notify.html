@@ -2,7 +2,7 @@
 <html lang="zh-hans">
 <head>
     <meta charset="UTF-8">
-    <title>首页</title>
+    <title>通知</title>
 
     {% load static %}
     <link rel="icon" href="{% static 'favicon.ico' %}"/>
@@ -15,47 +15,31 @@
 {% include 'application/include/nav.html' %}
 
 <ul class="collection with-header horizontally-margin">
-    {% for new in news %}
+    {% for item in notify %}
         <li class="collection-item">
-            <div class="col s12 m7">
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <h5>{{ new.title }}</h5>
-                            <p>发布日期: {{ new.date }}</p>
-                            <p>作者: {{ new.author }}</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="/plant/news_content?id={{ new.id }}">查看详情</a>
-                            <a class="btn-floating red"><i class="material-icons">art_track</i></a>
-                            <a class="btn-floating green"><i class="material-icons">send</i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a href="#!" class="collection-item">
+                <span class="new badge red" data-badge-caption="通知">{{ item.date }}</span>
+                {{ item.title }}</a>
         </li>
     {% endfor %}
 </ul>
 
 <ul class="pagination horizontally-centered">
-    {% if news.has_previous %}
-        <li class="waves-effect"><a href="?page={{ news.previous_page_number }}"><i
+    {% if notify.has_previous %}
+        <li class="waves-effect"><a href="?page={{ notify.previous_page_number }}"><i
                 class="material-icons">chevron_left</i></a></li>
     {% else %}
         <li class="disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
     {% endif %}
-    {% for page_num in news.paginator.page_range %}
-        {% if page_num == news.number %}
+    {% for page_num in notify.paginator.page_range %}
+        {% if page_num == notify.number %}
             <li class="active"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
         {% else %}
             <li class="waves-effect"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
         {% endif %}
     {% endfor %}
-    {% if news.has_next %}
-        <li class="waves-effect"><a href="?page={{ news.next_page_number }}"><i
+    {% if notify.has_next %}
+        <li class="waves-effect"><a href="?page={{ notify.next_page_number }}"><i
                 class="material-icons">chevron_right</i></a></li>
     {% else %}
         <li class="disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>

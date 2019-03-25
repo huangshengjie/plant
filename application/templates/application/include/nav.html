@@ -1,4 +1,4 @@
-<div class="navbar-fixed">
+<div id="top" class="navbar-fixed">
     <nav>
         <div class="nav-wrapper">
             <a href="/" class="brand-logo">植物管家</a>
@@ -7,17 +7,19 @@
                 <li><a href="/gallery">相册</a></li>
                 <li><a href="/board">排行榜</a></li>
                 <li><a href="{% url 'news' %}">新闻中心</a></li>
-                <li><a href="/activity">活动</a></li>
+                <li><a href="{% url 'notify' %}">通知
+                    <span class="new badge red" data-badge-caption="消息">2</span>
+                </a></li>
                 <li><a href="{% url 'user_center' %}">用户中心</a></li>
             </ul>
         </div>
     </nav>
 </div>
 
-<div style="margin: 12px">
-    <a href="#" data-target="slide-out" class="sidenav-trigger btn-floating btn-large red">
-        <i class="material-icons">chevron_right</i></a>
-</div>
+{#<div style="margin: 12px">#}
+{#    <a href="#" data-target="slide-out" class="sidenav-trigger btn-floating btn-large red">#}
+{#        <i class="material-icons">chevron_right</i></a>#}
+{#</div>#}
 
 <ul id="slide-out" class="sidenav">
     <li><a href="#!">First Sidebar Link</a></li>
