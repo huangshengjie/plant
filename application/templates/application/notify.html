@@ -17,7 +17,7 @@
 <ul class="collection with-header horizontally-margin">
     {% for item in notify %}
         <li class="collection-item">
-            <a href="#!" class="collection-item">
+            <a href="/plant/notify_content?id={{ item.id }}" class="collection-item">
                 <span class="new badge red" data-badge-caption="通知">{{ item.date }}</span>
                 {{ item.title }}</a>
         </li>

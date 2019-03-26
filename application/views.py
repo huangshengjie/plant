@@ -53,6 +53,11 @@ def notify_content(request):
     return render(request, 'application/notify_content.html', context)
 
 
+def rank(request):
+    context = {'notify': ''}
+    return render(request, 'application/rank.html', context)
+
+
 def user_center(request):
     return render(request, 'application/user_center.html')
 

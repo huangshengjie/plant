@@ -13,4 +13,5 @@ urlpatterns = [
     path('news_content/', views.news_content, name='news_content'),
     path('notify/', views.notify, name='notify'),
     path('notify_content/', views.notify_content, name='notify_content'),
+    path('rank/', views.rank, name='rank'),
 ]

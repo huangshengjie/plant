@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-hans">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>通知详情</title>
+
+    {% load static %}
+    <link rel="icon" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        .title, .desc {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+{% include 'application/include/nav.html' %}
 
+<div class="horizontally-margin">
+    <h3 class="title">{{ notify.title }}</h3>
+    <p class="desc">时间:{{ notify.date }}</p>
+    <p>{{ notify.content }}</p>
+</div>
+
+{% include 'application/include/footer.html' %}
+
+<script src="{% static 'js/materialize.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
