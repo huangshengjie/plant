@@ -62,22 +62,22 @@
             <div class="divider"></div>
             <div class="section">
                 <h5>用户名</h5>
-                <p>黄胜杰</p>
+                <p>{{ user.name }}</p>
             </div>
             <div class="divider"></div>
             <div class="section">
                 <h5>密码</h5>
-                <p>123456</p>
+                <p>{{ user.password }}</p>
             </div>
             <div class="divider"></div>
             <div class="section">
                 <h5>邮箱</h5>
-                <p>1126184096@qq.com</p>
+                <p>{{ user.email }}</p>
             </div>
             <div class="divider"></div>
             <div class="section">
                 <h5>手机号</h5>
-                <p>18940980522</p>
+                <p>{{ user.phone }}</p>
             </div>
         </div>
 
@@ -85,32 +85,33 @@
             <h5>修改账户</h5>
             <div class="divider"></div>
             <div class="row">
-                <form class="col s12">
+                <form action="{% url 'user_update' %}" method="post" class="col s12">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2_name" class="materialize-textarea" maxlength="10"></textarea>
+                            <textarea id="icon_prefix2_name" name="name" class="materialize-textarea" maxlength="10">{{ user.name }}</textarea>
                             <label for="icon_prefix2_name">用户名</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2_password" class="materialize-textarea" maxlength="10"></textarea>
+                            <textarea id="icon_prefix2_password" name="password" class="materialize-textarea" maxlength="10">{{ user.password }}</textarea>
                             <label for="icon_prefix2_password">密码</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2_email" class="materialize-textarea" maxlength="10"></textarea>
+                            <textarea id="icon_prefix2_email" name="email" class="materialize-textarea" maxlength="10">{{ user.email }}</textarea>
                             <label for="icon_prefix2_email">邮箱</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2_phone" class="materialize-textarea" maxlength="10"></textarea>
+                            <textarea id="icon_prefix2_phone" name="phone" class="materialize-textarea" maxlength="11">{{ user.phone }}</textarea>
                             <label for="icon_prefix2_phone">手机号</label>
                         </div>
                     </div>

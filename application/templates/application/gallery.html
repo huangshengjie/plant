@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-hans">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>相册</title>
+
+    {% load static %}
+    <link rel="icon" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
+{% include 'application/include/nav.html' %}
 
+<ul class="collection with-header horizontally-margin">
+    <li class="collection-item">
+        <div class="row horizontally-centered">
+            <div class="horizontally-centered">
+                <div class="card horizontally-centered">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/800x600/?boat">
+                        <span class="card-title">Card Title</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<ul class="pagination horizontally-centered">
+    {% if notify.has_previous %}
+        <li class="waves-effect"><a href="?page={{ notify.previous_page_number }}"><i
+                class="material-icons">chevron_left</i></a></li>
+    {% else %}
+        <li class="disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
+    {% endif %}
+    {% for page_num in notify.paginator.page_range %}
+        {% if page_num == notify.number %}
+            <li class="active"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+        {% else %}
+            <li class="waves-effect"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+        {% endif %}
+    {% endfor %}
+    {% if notify.has_next %}
+        <li class="waves-effect"><a href="?page={{ notify.next_page_number }}"><i
+                class="material-icons">chevron_right</i></a></li>
+    {% else %}
+        <li class="disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
+    {% endif %}
+</ul>
+
+{% include 'application/include/footer.html' %}
+
+<script src="{% static 'js/materialize.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

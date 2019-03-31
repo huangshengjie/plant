@@ -28,3 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
         dist: -25
     });
 });
+
+document.querySelectorAll('.materialboxed');
+      M.Materialbox.init(mb,{
+
+      })
+

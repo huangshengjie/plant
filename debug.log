@@ -1,62 +1,4 @@
-INFO 2019-03-17 19:27:36,732 def index
-INFO 2019-03-17 19:27:41,406 def account
-INFO 2019-03-17 19:31:41,526 def account
-INFO 2019-03-17 19:31:56,189 def account
-INFO 2019-03-17 19:32:41,496 def account
-INFO 2019-03-17 19:34:34,339 def account
-INFO 2019-03-17 19:34:45,644 def login
-INFO 2019-03-17 19:34:45,644 1@qq.com
-INFO 2019-03-17 19:34:45,645 1
-INFO 2019-03-17 19:34:45,645 yes
-INFO 2019-03-17 20:29:02,102 def login
-INFO 2019-03-17 20:29:02,104 2@qq.com
-INFO 2019-03-17 20:29:02,110 2
-2019-03-17 20:29:06,090 [Thread-16:18196] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
-    "returned None instead." % (callback.__module__, view_name)
-ValueError: The view application.views.login didn't return an HttpResponse object. It returned None instead.
-INFO 2019-03-17 20:36:22,262 def account
-INFO 2019-03-17 20:36:36,168 def login
-INFO 2019-03-17 20:36:36,169 1@qq.com
-INFO 2019-03-17 20:36:36,169 2
-INFO 2019-03-17 20:36:36,170 no
-INFO 2019-03-17 20:46:59,311 def login
-INFO 2019-03-17 20:46:59,312 1@qq.com
-INFO 2019-03-17 20:46:59,312 2
-INFO 2019-03-17 20:46:59,312 ÃÜÂë´íÎó
-INFO 2019-03-17 20:47:16,825 def login
-INFO 2019-03-17 20:47:16,825 1@qq.com
-INFO 2019-03-17 20:47:16,825 2
-INFO 2019-03-17 20:47:16,825 ÃÜÂë´íÎó
-INFO 2019-03-17 20:49:59,625 def login
-INFO 2019-03-17 20:49:59,625 1@qq.com
-INFO 2019-03-17 20:49:59,626 2
-INFO 2019-03-17 20:49:59,626 ÃÜÂë´íÎó
-INFO 2019-03-17 20:50:17,770 def login
-INFO 2019-03-17 20:50:17,770 1@qq.com
-INFO 2019-03-17 20:50:17,770 2
-INFO 2019-03-17 20:50:17,770 ÃÜÂë´íÎó
-INFO 2019-03-17 20:50:27,855 def login
-INFO 2019-03-17 20:50:27,856 11@qq.com
-INFO 2019-03-17 20:50:27,856 1
-INFO 2019-03-17 20:50:27,856 ÓÃ»§Ãû´íÎó»ò²»´æÔÚ
-INFO 2019-03-17 20:51:06,607 def login
-INFO 2019-03-17 20:51:06,607 1@qq.com
-INFO 2019-03-17 20:51:06,608 1
-INFO 2019-03-17 20:51:06,608 µÇÂ¼³É¹¦
-INFO 2019-03-17 20:51:43,427 def login
-INFO 2019-03-17 20:51:43,428 1@qq.com
-INFO 2019-03-17 20:51:43,428 1
-INFO 2019-03-17 20:51:43,428 µÇÂ¼³É¹¦
-INFO 2019-03-17 20:51:43,441 def index
-INFO 2019-03-17 20:51:49,667 def account
-INFO 2019-03-17 21:06:21,308 def login
-INFO 2019-03-17 21:06:21,308 1126184096@qq.com
-INFO 2019-03-17 21:06:21,309 1
-2019-03-17 21:06:24,181 [Thread-2:7832] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
+2019-03-31 21:58:34,188 [Thread-2:11004] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -64,15 +6,14 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 42, in login
-    if email == user.email:
-AttributeError: 'NoneType' object has no attribute 'email'
-INFO 2019-03-17 21:07:13,802 def account
-INFO 2019-03-17 21:07:25,559 def login
-INFO 2019-03-17 21:07:25,559 1126184096@qq.com
-INFO 2019-03-17 21:07:25,559 11
-INFO 2019-03-17 21:07:25,571 None
-2019-03-17 21:07:25,867 [Thread-2:17848] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
+  File "D:\workspace\workspace-python\plant\application\views.py", line 69, in user_center
+    user = cursor.query('select * from application_user')[0]
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 24, in __getattr__
+    cursor_attr = getattr(self.cursor, attr)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 90, in __getattr__
+    return getattr(self.cursor, attr)
+AttributeError: 'Cursor' object has no attribute 'query'
+2019-03-31 21:58:55,038 [Thread-2:8772] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -80,38 +21,125 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 43, in login
-    if email == user.email:
-AttributeError: 'NoneType' object has no attribute 'email'
-INFO 2019-03-17 21:12:06,513 def account
-INFO 2019-03-17 21:12:23,078 def login
-INFO 2019-03-17 21:12:23,078 1126184096@qq.com
-INFO 2019-03-17 21:12:23,078 1
-INFO 2019-03-17 21:12:23,095 None
-INFO 2019-03-17 21:12:37,190 def login
-INFO 2019-03-17 21:12:37,191 1126184096@qq.com
-INFO 2019-03-17 21:12:37,191 123
-INFO 2019-03-17 21:12:37,200 User object (1)
-INFO 2019-03-17 21:12:37,213 def index
-INFO 2019-03-17 21:14:45,115 def account
-INFO 2019-03-17 21:18:15,251 def account
-INFO 2019-03-17 21:32:35,382 def account
-INFO 2019-03-17 21:34:28,128 def account
-INFO 2019-03-17 21:36:03,514 def account
-INFO 2019-03-17 21:37:25,607 (<User: User object (2)>, False)
-2019-03-17 21:38:07,341 [Thread-3:15832] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/registered/
+  File "D:\workspace\workspace-python\plant\application\views.py", line 69, in user_center
+    user = cursor.execute('select * from application_user')[0]
+TypeError: 'int' object is not subscriptable
+2019-03-31 22:02:14,451 [Thread-4:10424] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
 Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 486, in get_or_create
-    return self.get(**lookup), False
-  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 399, in get
-    self.model._meta.object_name
-application.models.User.DoesNotExist: User matching query does not exist.
-
-During handling of the above exception, another exception occurred:
-
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 69, in user_center
+    user = cursor.execute('select * from application_user').fetchone()
+TypeError: 'int' object is not subscriptable
+2019-03-31 22:02:34,219 [Thread-2:6248] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
 Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
-    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 69, in user_center
+    user = cursor.execute('select * from application_user').fetchone()
+AttributeError: 'int' object has no attribute 'fetchone'
+2019-03-31 22:04:18,112 [Thread-2:6248] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 69, in user_center
+    user = cursor.execute('select * from application_user').fetchone()
+AttributeError: 'int' object has no attribute 'fetchone'
+2019-03-31 22:04:19,617 [Thread-2:6248] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 69, in user_center
+    user = cursor.execute('select * from application_user').fetchone()
+AttributeError: 'int' object has no attribute 'fetchone'
+2019-03-31 22:04:20,614 [Thread-2:6248] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 69, in user_center
+    user = cursor.execute('select * from application_user').fetchone()
+AttributeError: 'int' object has no attribute 'fetchone'
+2019-03-31 22:04:20,991 [Thread-2:6248] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 69, in user_center
+    user = cursor.execute('select * from application_user').fetchone()
+AttributeError: 'int' object has no attribute 'fetchone'
+2019-03-31 22:04:21,382 [Thread-2:6248] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 69, in user_center
+    user = cursor.execute('select * from application_user').fetchone()
+AttributeError: 'int' object has no attribute 'fetchone'
+2019-03-31 22:04:21,662 [Thread-3:9756] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 69, in user_center
+    user = cursor.execute('select * from application_user').fetchone()
+AttributeError: 'int' object has no attribute 'fetchone'
+2019-03-31 22:04:22,032 [Thread-3:9756] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 69, in user_center
+    user = cursor.execute('select * from application_user').fetchone()
+AttributeError: 'int' object has no attribute 'fetchone'
+INFO 2019-03-31 22:04:35,440 4
+INFO 2019-03-31 22:24:02,869 0
+2019-03-31 22:24:29,011 [Thread-2:11980] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 69, in user_center
+    user = cursor.execute('select * from user').fetchone()
+AttributeError: 'int' object has no attribute 'fetchone'
+2019-03-31 22:30:27,231 [Thread-6:9408] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_update/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 83, in _execute
+    return self.cursor.execute(sql)
   File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
     return self.cursor.execute(query, args)
   File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
@@ -130,7 +158,7 @@ Traceback (most recent call last):
     err.raise_mysql_exception(self._data)
   File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
-pymysql.err.IntegrityError: (1062, "Duplicate entry '123@qq.com' for key 'email'")
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com,1893456123)' at line 1")
 
 The above exception was the direct cause of the following exception:
 
@@ -141,32 +169,8 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 68, in registered
-    user = User.objects.get_or_create(email=email, phone=phone, name=name, password=password)
-  File "D:\development\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 488, in get_or_create
-    return self._create_object_from_params(lookup, params)
-  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 530, in _create_object_from_params
-    raise e
-  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 522, in _create_object_from_params
-    obj = self.create(**params)
-  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 413, in create
-    obj.save(force_insert=True, using=self.db)
-  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 718, in save
-    force_update=force_update, update_fields=update_fields)
-  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 748, in save_base
-    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
-  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 831, in _save_table
-    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
-  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
-    using=using, raw=raw)
-  File "D:\development\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1136, in _insert
-    return query.get_compiler(using=using).execute_sql(return_id)
-  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
-    cursor.execute(sql, params)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 82, in user_update
+    % (name, pw, email, phone))
   File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
     return super().execute(sql, params)
   File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
@@ -177,8 +181,8 @@ Traceback (most recent call last):
     return self.cursor.execute(sql, params)
   File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
     raise dj_exc_value.with_traceback(traceback) from exc_value
-  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
-    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 83, in _execute
+    return self.cursor.execute(sql)
   File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
     return self.cursor.execute(query, args)
   File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
@@ -197,54 +201,32 @@ Traceback (most recent call last):
     err.raise_mysql_exception(self._data)
   File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
-django.db.utils.IntegrityError: (1062, "Duplicate entry '123@qq.com' for key 'email'")
-INFO 2019-03-17 21:45:23,121 (<User: User object (2)>, False)
-INFO 2019-03-17 21:45:41,287 (<User: User object (4)>, True)
-2019-03-19 00:19:45,401 [Thread-2:3280] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+django.db.utils.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com,1893456123)' at line 1")
+2019-03-31 22:31:33,595 [Thread-2:13188] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_update/
 Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 25, in index
-    return render(request, 'application/index.html', news)
-  File "D:\development\Python\lib\site-packages\django\shortcuts.py", line 36, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-  File "D:\development\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-  File "D:\development\Python\lib\site-packages\django\template\backends\django.py", line 59, in render
-    context = make_context(context, request, autoescape=self.backend.engine.autoescape)
-  File "D:\development\Python\lib\site-packages\django\template\context.py", line 270, in make_context
-    raise TypeError('context must be a dict rather than %s.' % context.__class__.__name__)
-TypeError: context must be a dict rather than Page.
-2019-03-19 00:20:32,982 [Thread-3:14788] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 25, in index
-    return render(request, 'application/index.html', news)
-  File "D:\development\Python\lib\site-packages\django\shortcuts.py", line 36, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-  File "D:\development\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-  File "D:\development\Python\lib\site-packages\django\template\backends\django.py", line 59, in render
-    context = make_context(context, request, autoescape=self.backend.engine.autoescape)
-  File "D:\development\Python\lib\site-packages\django\template\context.py", line 270, in make_context
-    raise TypeError('context must be a dict rather than %s.' % context.__class__.__name__)
-TypeError: context must be a dict rather than Page.
-2019-03-22 00:13:53,009 [Thread-2:10404] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 77, in __getitem__
-    list_ = super().__getitem__(key)
-KeyError: 'email'
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 83, in _execute
+    return self.cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 516, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 727, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1066, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 683, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com,1893456123)' at line 1")
 
-During handling of the above exception, another exception occurred:
+The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
@@ -253,18 +235,64 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 41, in login
-    email = request.POST['email']
-  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 79, in __getitem__
-    raise MultiValueDictKeyError(key)
-django.utils.datastructures.MultiValueDictKeyError: 'email'
-2019-03-24 17:22:37,766 [Thread-5:12120] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
+  File "D:\workspace\workspace-python\plant\application\views.py", line 82, in user_update
+    % (name, pw, email, phone))
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 83, in _execute
+    return self.cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 516, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 727, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1066, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 683, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com,1893456123)' at line 1")
+2019-03-31 22:46:06,439 [Thread-2:14996] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_update/
 Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 77, in __getitem__
-    list_ = super().__getitem__(key)
-KeyError: 'email'
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 83, in _execute
+    return self.cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 516, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 727, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1066, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 683, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com,1893456123)' at line 1")
 
-During handling of the above exception, another exception occurred:
+The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
@@ -273,12 +301,65 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 41, in login
-    email = request.POST['email']
-  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 79, in __getitem__
-    raise MultiValueDictKeyError(key)
-django.utils.datastructures.MultiValueDictKeyError: 'email'
-2019-03-24 17:27:45,878 [Thread-2:8312] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+  File "D:\workspace\workspace-python\plant\application\views.py", line 83, in user_update
+    cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 83, in _execute
+    return self.cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 516, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 727, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1066, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 683, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com,1893456123)' at line 1")
+2019-03-31 22:47:04,776 [Thread-2:2860] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_update/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 83, in _execute
+    return self.cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 516, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 727, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1066, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 683, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com,1893456123)' at line 1")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -286,34 +367,66 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 24, in index
-    return render(request, 'application/index.html', context)
-  File "D:\development\Python\lib\site-packages\django\shortcuts.py", line 36, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-  File "D:\development\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-  File "D:\development\Python\lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 171, in render
-    return self._render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 937, in render
-    bit = node.render_annotated(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\defaulttags.py", line 209, in render
-    nodelist.append(node.render_annotated(context))
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\defaulttags.py", line 442, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-  File "D:\development\Python\lib\site-packages\django\urls\base.py", line 90, in reverse
-    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
-  File "D:\development\Python\lib\site-packages\django\urls\resolvers.py", line 622, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'news_content' with arguments '(1,)' not found. 1 pattern(s) tried: ['plant/news/<int:\\ news_id>/$']
-2019-03-24 17:29:03,879 [Thread-2:8312] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+  File "D:\workspace\workspace-python\plant\application\views.py", line 83, in user_update
+    cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 83, in _execute
+    return self.cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 516, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 727, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1066, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 683, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com,1893456123)' at line 1")
+INFO 2019-03-31 22:50:42,344 huanginsert into user (name,password,email,phone) values ('shengjie','123','111@qq.com','18940980533')
+2019-03-31 22:52:55,345 [Thread-2:12256] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_update/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 83, in _execute
+    return self.cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 516, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 727, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1066, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 683, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '18940980522' for key 'phone'")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -321,34 +434,41 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 24, in index
-    return render(request, 'application/index.html', context)
-  File "D:\development\Python\lib\site-packages\django\shortcuts.py", line 36, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-  File "D:\development\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-  File "D:\development\Python\lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 171, in render
-    return self._render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 937, in render
-    bit = node.render_annotated(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\defaulttags.py", line 209, in render
-    nodelist.append(node.render_annotated(context))
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\defaulttags.py", line 442, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-  File "D:\development\Python\lib\site-packages\django\urls\base.py", line 90, in reverse
-    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
-  File "D:\development\Python\lib\site-packages\django\urls\resolvers.py", line 622, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'news_content' with arguments '(1,)' not found. 1 pattern(s) tried: ['plant/news/<int:\\ news_id>/$']
-2019-03-24 17:29:28,536 [Thread-2:8312] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+  File "D:\workspace\workspace-python\plant\application\views.py", line 85, in user_update
+    cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 83, in _execute
+    return self.cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 516, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 727, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1066, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 683, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1062, "Duplicate entry '18940980522' for key 'phone'")
+INFO 2019-03-31 22:53:14,735 huanginsert into user (name,password,email,phone) values ('xiu','123','55@qqq.com','18940980520')
+2019-03-31 23:18:02,808 [Thread-2:9304] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -356,34 +476,10 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 24, in index
-    return render(request, 'application/index.html', context)
-  File "D:\development\Python\lib\site-packages\django\shortcuts.py", line 36, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-  File "D:\development\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-  File "D:\development\Python\lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 171, in render
-    return self._render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 937, in render
-    bit = node.render_annotated(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\defaulttags.py", line 209, in render
-    nodelist.append(node.render_annotated(context))
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\defaulttags.py", line 442, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-  File "D:\development\Python\lib\site-packages\django\urls\base.py", line 90, in reverse
-    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
-  File "D:\development\Python\lib\site-packages\django\urls\resolvers.py", line 622, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'news_content' with arguments '(1,)' not found. 1 pattern(s) tried: ['plant/news/<int:\\ news_id>/$']
-2019-03-24 17:48:57,002 [Thread-5:11380] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+  File "D:\workspace\workspace-python\plant\application\views.py", line 116, in login
+    request.session['user'+user.id] = user.id
+TypeError: can only concatenate str (not "int") to str
+2019-03-31 23:18:43,644 [Thread-3:12304] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -391,30 +487,10 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 24, in index
-    return render(request, 'application/index.html', context)
-  File "D:\development\Python\lib\site-packages\django\shortcuts.py", line 36, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-  File "D:\development\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-  File "D:\development\Python\lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 171, in render
-    return self._render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 937, in render
-    bit = node.render_annotated(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\defaulttags.py", line 442, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-  File "D:\development\Python\lib\site-packages\django\urls\base.py", line 90, in reverse
-    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
-  File "D:\development\Python\lib\site-packages\django\urls\resolvers.py", line 622, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'user_center' not found. 'user_center' is not a valid view function or pattern name.
-2019-03-26 00:40:01,838 [Thread-8:3652] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
+  File "D:\workspace\workspace-python\plant\application\views.py", line 116, in login
+    request.session['user'+user.id] = user.id
+TypeError: can only concatenate str (not "int") to str
+2019-03-31 23:21:02,420 [Thread-3:8364] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -422,36 +498,22 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 40, in user_center
-    notify_list = Notify.objects.all()
+  File "D:\workspace\workspace-python\plant\application\views.py", line 117, in login
+    response = render(request, '')
   File "D:\development\Python\lib\site-packages\django\shortcuts.py", line 36, in render
     content = loader.render_to_string(template_name, context, request, using=using)
-  File "D:\development\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-  File "D:\development\Python\lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 171, in render
-    return self._render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 937, in render
-    bit = node.render_annotated(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\loader_tags.py", line 188, in render
-    return template.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 173, in render
-    return self._render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 937, in render
-    bit = node.render_annotated(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\defaulttags.py", line 442, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-  File "D:\development\Python\lib\site-packages\django\urls\base.py", line 90, in reverse
-    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
-  File "D:\development\Python\lib\site-packages\django\urls\resolvers.py", line 622, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'notify' not found. 'notify' is not a valid view function or pattern name.
+  File "D:\development\Python\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\development\Python\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\development\Python\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\development\Python\lib\site-packages\django\template\engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\development\Python\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\development\Python\lib\site-packages\django\template\loaders\base.py", line 24, in get_template
+    contents = self.get_contents(origin)
+  File "D:\development\Python\lib\site-packages\django\template\loaders\filesystem.py", line 23, in get_contents
+    with open(origin.name, encoding=self.engine.file_charset) as fp:
+PermissionError: [Errno 13] Permission denied: 'D:\\workspace\\workspace-python\\plant\\application\\templates'

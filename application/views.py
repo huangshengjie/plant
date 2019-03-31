@@ -3,6 +3,8 @@ import logging
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.db import connection, transaction
+from django.shortcuts import redirect
 
 from application.models import *
 
@@ -58,12 +60,43 @@ def rank(request):
     return render(request, 'application/rank.html', context)
 
 
+def gallery(request):
+    context = {'notify': ''}
+    return render(request, 'application/gallery.html', context)
+
+
 def user_center(request):
-    return render(request, 'application/user_center.html')
+    if():
+        print('')
+    else:
+        user_id = request.COOKIES.get('user_id')
+        user = User.objects.filter(id=user_id).first()
+        context = {'user': user}
+
+        return render(request, 'application/user_center.html', context)
+
+
+def user_update(request):
+    name = request.POST['name']
+    pw = request.POST['password']
+    email = request.POST['email']
+    phone = request.POST['phone']
+
+    cursor = connection.cursor()
+    # sql = 'insert into user (name,password,email,phone) values (%s,%s,%s,%s);' % (name, pw, email, phone)
+    sql = "insert into user (name,password,email,phone) " \
+          "values ('%s','%s','%s','%s')" % (name, pw, email, phone)
+    cursor.execute(sql)
+    debug('huang' + sql)
+
+    return redirect('user_center')
+    # return render(request, 'application/user_center.html')
 
 
 def sign_out(request):
-    return render(request, 'application/account.html')
+    response = render(request, 'application/account.html')
+    response.delete_cookie('user_id')
+    return response
 
 
 # 用户登录和注册页
@@ -86,7 +119,10 @@ def login(request):
 
     if email == user.email:
         if password == user.password:
-            return HttpResponseRedirect('/')
+            request.session['user_%d' % user.id] = user.id
+            response = render(request, 'application/index.html')
+            response.set_cookie('user_id', user.id)
+            return response
         else:
             context = {'login_title': '密码错误',
                        'registered_title': '创建账户'}

@@ -8,9 +8,10 @@ class User(models.Model):
     name = models.CharField(verbose_name='用户名', max_length=10, unique=True)
     password = models.CharField(verbose_name='密码', max_length=16)
     email = models.EmailField(verbose_name='邮箱', max_length=20, unique=True)
-    phone = models.CharField(verbose_name='手机号', unique=True, max_length=20)
+    phone = models.CharField(verbose_name='手机号', unique=True, max_length=11)
 
     class Meta:
+        db_table = 'user'
         verbose_name = '用户'
         verbose_name_plural = '用户'
 
@@ -24,6 +25,7 @@ class Admin(models.Model):
     phone = models.IntegerField(verbose_name='手机号', unique=True)
 
     class Meta:
+        db_table = 'admin'
         verbose_name = '管理员'
         verbose_name_plural = '管理员'
 
@@ -37,6 +39,7 @@ class News(models.Model):
     content = models.TextField(verbose_name='内容', default='')
 
     class Meta:
+        db_table = 'news'
         verbose_name = '新闻'
         verbose_name_plural = '新闻'
 
@@ -49,6 +52,7 @@ class Notify(models.Model):
     content = models.TextField(verbose_name='内容', default='')
 
     class Meta:
+        db_table = 'notify'
         verbose_name = '推送通知'
         verbose_name_plural = '推送通知'
 
@@ -61,6 +65,7 @@ class Plant(models.Model):
     address = models.CharField(verbose_name='植物产地', max_length=20)
 
     class Meta:
+        db_table = 'plant'
         verbose_name = '植物'
         verbose_name_plural = '植物'
 
@@ -74,6 +79,7 @@ class DigitalCard(models.Model):
     identifier = models.CharField(verbose_name='序列号', max_length=200)
 
     class Meta:
+        db_table = 'digital_card'
         verbose_name = '数字身份证'
         verbose_name_plural = '数字身份证'
 
@@ -87,6 +93,7 @@ class Album(models.Model):
     content = models.CharField(verbose_name='内容', max_length=50)
 
     class Meta:
+        db_table = 'album'
         verbose_name = '相册'
         verbose_name_plural = '相册'
 
@@ -100,6 +107,7 @@ class Photo(models.Model):
     path = models.CharField(verbose_name='路径', max_length=100)
 
     class Meta:
+        db_table = 'photo'
         verbose_name = '照片'
         verbose_name_plural = '照片'
 
@@ -116,6 +124,7 @@ class Judge(models.Model):
     vote = models.IntegerField(verbose_name='投票数', default=0)
 
     class Meta:
+        db_table = 'judge'
         verbose_name = '评判'
         verbose_name_plural = '评判'
 
@@ -126,6 +135,7 @@ class Board(models.Model):
     subject = models.CharField(verbose_name='主题', max_length=20)
 
     class Meta:
+        db_table = 'board'
         verbose_name = '排行榜'
         verbose_name_plural = '排行榜'
 
@@ -136,6 +146,7 @@ class Category(models.Model):
     name = models.CharField(verbose_name='类别名', max_length=10)
 
     class Meta:
+        db_table = 'category'
         verbose_name = '类别'
         verbose_name_plural = '类别'
 
@@ -147,5 +158,6 @@ class PlantToCategory(models.Model):
     category_id = models.ForeignKey(verbose_name='类别id', to=Category, on_delete=models.CASCADE)
 
     class Meta:
+        db_table = 'plant_to_category'
         verbose_name = '植物-类别中间表'
         verbose_name_plural = '植物-类别中间表'
