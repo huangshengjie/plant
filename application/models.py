@@ -63,6 +63,7 @@ class Plant(models.Model):
     user_id = models.ForeignKey(verbose_name='用户id', to=User, on_delete=models.CASCADE)
     name = models.CharField(verbose_name='植物名', max_length=20)
     address = models.CharField(verbose_name='植物产地', max_length=20)
+    avatar = models.CharField(verbose_name='植物头像', max_length=100)
 
     class Meta:
         db_table = 'plant'

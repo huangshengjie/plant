@@ -29,8 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.querySelectorAll('.materialboxed');
-      M.Materialbox.init(mb,{
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems, {});
+});
 
-      })
-
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.tabs');
+    var instances = M.Tabs.init(elems, {});
+});

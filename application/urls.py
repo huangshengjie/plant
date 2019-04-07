@@ -17,4 +17,6 @@ urlpatterns = [
     path('notify_content/', views.notify_content, name='notify_content'),
     path('rank/', views.rank, name='rank'),
     path('gallery/', views.gallery, name='gallery'),
+
+    path('upload/', views.upload, name='upload'),
 ]

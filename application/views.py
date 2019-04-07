@@ -1,4 +1,6 @@
 import logging
+import os
+import uuid
 
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
@@ -7,6 +9,7 @@ from django.db import connection, transaction
 from django.shortcuts import redirect
 
 from application.models import *
+from plant import settings
 
 logger = logging.getLogger('app.log')
 
@@ -14,6 +17,30 @@ logger = logging.getLogger('app.log')
 # 打印日志
 def debug(message):
     logger.info(message)
+
+
+def upload(request):
+    if request.POST:
+        files = request.FILES.getlist('files')
+        if len(files) > 0:
+            if not os.path.exists(settings.MEDIA_ROOT):
+                os.makedirs(settings.MEDIA_ROOT)
+
+            images = []
+            for file in files:
+                extension = os.path.splitext(file.name)[1]
+                file_name = '{}{}'.format(uuid.uuid4(), extension)
+
+                file_path = '{}/{}'.format(settings.MEDIA_ROOT, file_name)
+                images.append('{}{}'.format(settings.STATIC_URL, file_name))
+
+                with open(file_path, 'wb') as f:
+                    for c in file.chunks():
+                        f.write(c)
+
+        return render(request, 'application/show.html', {'images': images})
+
+    return render(request, 'application/upload.html')
 
 
 def index(request):
@@ -66,7 +93,7 @@ def gallery(request):
 
 
 def user_center(request):
-    if():
+    if ():
         print('')
     else:
         user_id = request.COOKIES.get('user_id')
