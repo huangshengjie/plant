@@ -90,7 +90,7 @@
                 {% for item in plants %}
                     <a href="">
                         <div style="margin-right: 15px">
-                            <img src="{{ item.avatar }}" style="width: 200px;height: 200px">
+                            <img src="/static/{{ item.avatar }}" style="width: 200px;height: 200px">
                             <p>{{ item.name }}</p>
                         </div>
                     </a>
@@ -101,32 +101,92 @@
         <div id="section_new_plant" style="display: none; margin-top: 45px">
             <form action="{% url 'login' %}" method="post">
                 {% csrf_token %}
-                <div class="field-wrap">
-                    <label>
-                        邮箱<span class="req">*</span>
-                    </label>
-                    <input type="email" name="email" required autocomplete="off"/>
+
+                <div class="input-field">
+                    <select>
+                        <option value="" disabled selected>请选择</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                    <label>植物类别</label>
                 </div>
 
-                <div class="field-wrap">
-                    <label>
-                        密码<span class="req">*</span>
-                    </label>
-                    <input type="password" name="password" required autocomplete="off"/>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" id="autocomplete-input-plant-name" class="autocomplete">
+                    <label for="autocomplete-input-plant-name">植物名</label>
                 </div>
 
-                <p class="forgot"><a href="#">忘记密码?</a></p>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" id="autocomplete-input-plant-address" class="autocomplete">
+                    <label for="autocomplete-input-plant-address">植物产地</label>
+                </div>
 
-                <button type="submit" class="button button-block"/>
-                登录</button>
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>植物头像</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">
+                        创建一株植物<i class="material-icons right">send</i>
+                    </button>
+                </div>
             </form>
         </div>
 
         <div id="section_gallery" style="display: none; margin-top: 45px">
-            <button class="btn waves-effect waves-light">创建我的相册
+            <button id="btn_new_gallery" class="btn waves-effect waves-light">创建我的相册
                 <i class="material-icons right">send</i>
             </button>
 
+        </div>
+
+        <div id="section_new_gallery" style="display: none; margin-top: 45px">
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+
+                <div class="input-field">
+                    <select>
+                        <option value="" disabled selected>请选择</option>
+                        <option value="1">植物1</option>
+                        <option value="2">植物2</option>
+                        <option value="3">植物3</option>
+                    </select>
+                    <label>植物</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" id="autocomplete-input-gallery-name" class="autocomplete">
+                    <label for="autocomplete-input-gallery-name">相册名</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" id="autocomplete-input-gallery-desc" class="autocomplete">
+                    <label for="autocomplete-input-gallery-desc">描述</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" id="autocomplete-input-gallery-date" class="datepicker">
+                    <label for="autocomplete-input-gallery-date">日期</label>
+                </div>
+
+                <div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">
+                        创建一本相册<i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </form>
         </div>
 
         <div id="section_update" style="display: none">
@@ -209,6 +269,10 @@
         resetStatus();
         document.getElementById("section_gallery").style.display = "block";
     };
+    document.getElementById("btn_new_gallery").onclick = function () {
+        resetStatus();
+        document.getElementById("section_new_gallery").style.display = "block";
+    };
     document.getElementById("btn_update").onclick = function () {
         resetStatus();
         document.getElementById("section_update").style.display = "block";
@@ -219,6 +283,7 @@
         document.getElementById("section_plant").style.display = "none";
         document.getElementById("section_new_plant").style.display = "none";
         document.getElementById("section_gallery").style.display = "none";
+        document.getElementById("section_new_gallery").style.display = "none";
         document.getElementById("section_update").style.display = "none";
     }
 </script>

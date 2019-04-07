@@ -41,9 +41,9 @@ class NotifyAdmin(admin.ModelAdmin):
 @admin.register(Plant)
 class PlantAdmin(admin.ModelAdmin):
     list_per_page = 10
-    list_display = ['id', 'user_id', 'name', 'address']
-    list_filter = ['name', 'address']
-    search_fields = ['name', 'address']
+    list_display = ['id', 'avatar_image', 'user', 'category', 'name', 'address']
+    list_filter = ['user', 'category', 'name', 'address']
+    search_fields = ['user', 'category', 'name', 'address']
 
 
 @admin.register(DigitalCard)
@@ -65,23 +65,23 @@ class AlbumAdmin(admin.ModelAdmin):
 @admin.register(Photo)
 class PhotoAdmin(admin.ModelAdmin):
     list_per_page = 10
-    list_display = ['id', 'album_id', 'title', 'date', 'path']
+    list_display = ['id', 'gallery', 'title', 'date', 'path_image']
     list_filter = ['title', 'date']
     search_fields = ['title', 'date']
 
 
-@admin.register(Judge)
-class JudgeAdmin(admin.ModelAdmin):
+@admin.register(Vote)
+class VoteAdmin(admin.ModelAdmin):
     list_per_page = 10
-    list_display = ['id', 'plant_id', 'organizer', 'subject', 'start_date', 'end_time', 'content', 'vote']
-    list_filter = ['subject']
-    search_fields = ['subject']
+    list_display = ['id', 'user', 'plant', 'rank', 'vote_date', 'comment', 'vote']
+    list_filter = ['rank']
+    search_fields = ['rank']
 
 
-@admin.register(Board)
-class BoardAdmin(admin.ModelAdmin):
+@admin.register(Rank)
+class RankAdmin(admin.ModelAdmin):
     list_per_page = 10
-    list_display = ['id', 'subject']
+    list_display = ['id', 'subject', 'title', 'content']
     list_filter = ['subject']
     search_fields = ['subject']
 
