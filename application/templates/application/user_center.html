@@ -81,6 +81,54 @@
             </div>
         </div>
 
+        <div id="section_plant" style="display: none; margin-top: 45px">
+            <button id="btn_new_plant" class="btn waves-effect waves-light">创建我的植物
+                <i class="material-icons right">send</i>
+            </button>
+
+            <div style="display: flex; margin-top: 20px">
+                {% for item in plants %}
+                    <a href="">
+                        <div style="margin-right: 15px">
+                            <img src="{{ item.avatar }}" style="width: 200px;height: 200px">
+                            <p>{{ item.name }}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="section_new_plant" style="display: none; margin-top: 45px">
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <div class="field-wrap">
+                    <label>
+                        邮箱<span class="req">*</span>
+                    </label>
+                    <input type="email" name="email" required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        密码<span class="req">*</span>
+                    </label>
+                    <input type="password" name="password" required autocomplete="off"/>
+                </div>
+
+                <p class="forgot"><a href="#">忘记密码?</a></p>
+
+                <button type="submit" class="button button-block"/>
+                登录</button>
+            </form>
+        </div>
+
+        <div id="section_gallery" style="display: none; margin-top: 45px">
+            <button class="btn waves-effect waves-light">创建我的相册
+                <i class="material-icons right">send</i>
+            </button>
+
+        </div>
+
         <div id="section_update" style="display: none">
             <h5>修改账户</h5>
             <div class="divider"></div>
@@ -90,28 +138,32 @@
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2_name" name="name" class="materialize-textarea" maxlength="10">{{ user.name }}</textarea>
+                            <textarea id="icon_prefix2_name" name="name" class="materialize-textarea"
+                                      maxlength="10">{{ user.name }}</textarea>
                             <label for="icon_prefix2_name">用户名</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2_password" name="password" class="materialize-textarea" maxlength="10">{{ user.password }}</textarea>
+                            <textarea id="icon_prefix2_password" name="password" class="materialize-textarea"
+                                      maxlength="10">{{ user.password }}</textarea>
                             <label for="icon_prefix2_password">密码</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2_email" name="email" class="materialize-textarea" maxlength="10">{{ user.email }}</textarea>
+                            <textarea id="icon_prefix2_email" name="email" class="materialize-textarea"
+                                      maxlength="10">{{ user.email }}</textarea>
                             <label for="icon_prefix2_email">邮箱</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2_phone" name="phone" class="materialize-textarea" maxlength="11">{{ user.phone }}</textarea>
+                            <textarea id="icon_prefix2_phone" name="phone" class="materialize-textarea"
+                                      maxlength="11">{{ user.phone }}</textarea>
                             <label for="icon_prefix2_phone">手机号</label>
                         </div>
                     </div>
@@ -147,9 +199,15 @@
     };
     document.getElementById("btn_plant").onclick = function () {
         resetStatus();
+        document.getElementById("section_plant").style.display = "block";
+    };
+    document.getElementById("btn_new_plant").onclick = function () {
+        resetStatus();
+        document.getElementById("section_new_plant").style.display = "block";
     };
     document.getElementById("btn_gallery").onclick = function () {
         resetStatus();
+        document.getElementById("section_gallery").style.display = "block";
     };
     document.getElementById("btn_update").onclick = function () {
         resetStatus();
@@ -158,6 +216,9 @@
 
     function resetStatus() {
         document.getElementById("section_basic").style.display = "none";
+        document.getElementById("section_plant").style.display = "none";
+        document.getElementById("section_new_plant").style.display = "none";
+        document.getElementById("section_gallery").style.display = "none";
         document.getElementById("section_update").style.display = "none";
     }
 </script>

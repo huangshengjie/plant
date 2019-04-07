@@ -57,13 +57,25 @@ class Notify(models.Model):
         verbose_name_plural = '推送通知'
 
 
+# 类别
+class Category(models.Model):
+    id = models.AutoField(verbose_name='id', primary_key=True, max_length=11)
+    name = models.CharField(verbose_name='类别名', max_length=10)
+
+    class Meta:
+        db_table = 'category'
+        verbose_name = '植物类别'
+        verbose_name_plural = '植物类别'
+
+
 # 植物
 class Plant(models.Model):
     id = models.AutoField(verbose_name='id', primary_key=True, max_length=11)
-    user_id = models.ForeignKey(verbose_name='用户id', to=User, on_delete=models.CASCADE)
+    user = models.ForeignKey(verbose_name='用户id', to=User, on_delete=models.CASCADE)
+    category = models.ForeignKey(verbose_name='植物类别id', to=Category, on_delete=models.CASCADE, default=1)
     name = models.CharField(verbose_name='植物名', max_length=20)
     address = models.CharField(verbose_name='植物产地', max_length=20)
-    avatar = models.CharField(verbose_name='植物头像', max_length=100)
+    avatar = models.CharField(verbose_name='植物头像', max_length=100, default='')
 
     class Meta:
         db_table = 'plant'
@@ -86,15 +98,16 @@ class DigitalCard(models.Model):
 
 
 # 相册
-class Album(models.Model):
+class Gallery(models.Model):
     id = models.AutoField(verbose_name='id', primary_key=True, max_length=11)
-    plant_id = models.ForeignKey(verbose_name='植物id', to=Plant, on_delete=models.CASCADE)
+    user = models.ForeignKey(verbose_name='用户id', to=Plant, on_delete=models.CASCADE)
+    plant = models.ForeignKey(verbose_name='植物id', to=Plant, on_delete=models.CASCADE)
     date = models.DateTimeField(verbose_name='日期', default=timezone.now)
     name = models.CharField(verbose_name='相册名', max_length=20)
-    content = models.CharField(verbose_name='内容', max_length=50)
+    desc = models.CharField(verbose_name='描述', max_length=50)
 
     class Meta:
-        db_table = 'album'
+        db_table = 'gallery'
         verbose_name = '相册'
         verbose_name_plural = '相册'
 
@@ -102,7 +115,7 @@ class Album(models.Model):
 # 照片
 class Photo(models.Model):
     id = models.AutoField(verbose_name='id', primary_key=True, max_length=11)
-    album_id = models.ForeignKey(verbose_name='相册id', to=Album, on_delete=models.CASCADE)
+    gallery = models.ForeignKey(verbose_name='相册id', to=Gallery, on_delete=models.CASCADE)
     title = models.CharField(verbose_name='标题', max_length=15)
     date = models.DateTimeField(verbose_name='日期', default=timezone.now)
     path = models.CharField(verbose_name='路径', max_length=100)
@@ -139,26 +152,3 @@ class Board(models.Model):
         db_table = 'board'
         verbose_name = '排行榜'
         verbose_name_plural = '排行榜'
-
-
-# 类别
-class Category(models.Model):
-    id = models.AutoField(verbose_name='id', primary_key=True, max_length=11)
-    name = models.CharField(verbose_name='类别名', max_length=10)
-
-    class Meta:
-        db_table = 'category'
-        verbose_name = '类别'
-        verbose_name_plural = '类别'
-
-
-# 植物-类别中间表
-class PlantToCategory(models.Model):
-    id = models.AutoField(verbose_name='id', primary_key=True, max_length=11)
-    plant_id = models.ForeignKey(verbose_name='植物id', to=Plant, on_delete=models.CASCADE)
-    category_id = models.ForeignKey(verbose_name='类别id', to=Category, on_delete=models.CASCADE)
-
-    class Meta:
-        db_table = 'plant_to_category'
-        verbose_name = '植物-类别中间表'
-        verbose_name_plural = '植物-类别中间表'

@@ -54,10 +54,10 @@ class DigitalCardAdmin(admin.ModelAdmin):
     search_fields = ['name', 'date']
 
 
-@admin.register(Album)
+@admin.register(Gallery)
 class AlbumAdmin(admin.ModelAdmin):
     list_per_page = 10
-    list_display = ['id', 'plant_id', 'date', 'name', 'content']
+    list_display = ['id', 'plant', 'date', 'name', 'desc']
     list_filter = ['name', 'date']
     search_fields = ['name', 'date']
 
@@ -92,11 +92,3 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ['id', 'name']
     list_filter = ['name']
     search_fields = ['name']
-
-
-@admin.register(PlantToCategory)
-class PlantToCategoryAdmin(admin.ModelAdmin):
-    list_per_page = 10
-    list_display = ['id', 'plant_id', 'category_id']
-    list_filter = ['plant_id', 'category_id']
-    search_fields = ['plant_id', 'category_id']

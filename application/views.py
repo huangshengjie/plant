@@ -3,10 +3,9 @@ import os
 import uuid
 
 from django.core.paginator import Paginator
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.db import connection, transaction
+from django.db import connection
 from django.shortcuts import redirect
+from django.shortcuts import render
 
 from application.models import *
 from plant import settings
@@ -98,7 +97,9 @@ def user_center(request):
     else:
         user_id = request.COOKIES.get('user_id')
         user = User.objects.filter(id=user_id).first()
-        context = {'user': user}
+
+        plants = Plant.objects.all()
+        context = {'user': user, 'plants': plants}
 
         return render(request, 'application/user_center.html', context)
 
