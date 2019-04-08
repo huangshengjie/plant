@@ -99,40 +99,32 @@
         </div>
 
         <div id="section_new_plant" style="display: none; margin-top: 45px">
-            <form action="{% url 'login' %}" method="post">
+            <form action="{% url 'new_plant' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 <div class="input-field">
-                    <select>
+                    <select name="category">
                         <option value="" disabled selected>请选择</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                        {% for item in plant_category %}
+                            <option value="{{ item.id }}">{{ item.name }}</option>
+                        {% endfor %}
                     </select>
                     <label>植物类别</label>
                 </div>
 
                 <div class="input-field col s12">
                     <i class="material-icons prefix">textsms</i>
-                    <input type="text" id="autocomplete-input-plant-name" class="autocomplete">
+                    <input name="name" type="text" id="autocomplete-input-plant-name" class="autocomplete">
                     <label for="autocomplete-input-plant-name">植物名</label>
                 </div>
 
                 <div class="input-field col s12">
                     <i class="material-icons prefix">textsms</i>
-                    <input type="text" id="autocomplete-input-plant-address" class="autocomplete">
+                    <input name="address" type="text" id="autocomplete-input-plant-address" class="autocomplete">
                     <label for="autocomplete-input-plant-address">植物产地</label>
                 </div>
 
-                <div class="file-field input-field">
-                    <div class="btn">
-                        <span>植物头像</span>
-                        <input type="file">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>
-                </div>
+                <input type="file" name="files" multiple>
 
                 <div>
                     <button class="btn waves-effect waves-light" type="submit" name="action">

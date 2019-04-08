@@ -99,7 +99,9 @@ def user_center(request):
         user = User.objects.filter(id=user_id).first()
 
         plants = Plant.objects.all()
-        context = {'user': user, 'plants': plants}
+
+        plant_category = Category.objects.all()
+        context = {'user': user, 'plants': plants, 'plant_category': plant_category}
 
         return render(request, 'application/user_center.html', context)
 
@@ -119,6 +121,30 @@ def user_update(request):
 
     return redirect('user_center')
     # return render(request, 'application/user_center.html')
+
+
+def new_plant(request):
+    user = request.COOKIES.get('user_id')
+    category = request.POST['category']
+    name = request.POST['name']
+    address = request.POST['address']
+    files = request.FILES.get('files')
+
+    extension = os.path.splitext(files.name)[1]
+    file_name = '{}{}'.format(uuid.uuid4(), extension)
+
+    file_path = '{}/{}'.format(settings.MEDIA_ROOT, file_name)
+
+    with open(file_path, 'wb') as f:
+        for c in files.chunks():
+            f.write(c)
+
+    cursor = connection.cursor()
+    sql = "insert into plant (name,address,avatar,user_id,category_id)" \
+          "values ('%s','%s','%s','%s','%s')" % (name, address, file_name, user, category)
+    cursor.execute(sql)
+
+    return redirect('user_center')
 
 
 def sign_out(request):

@@ -1301,3 +1301,127 @@ Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
 django.db.utils.ProgrammingError: (1146, "Table 'plant.vote' doesn't exist")
+2019-04-09 01:33:24,763 [Thread-2:6464] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 166, in login
+    email = request.POST['email']
+  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'email'
+2019-04-09 01:36:55,524 [Thread-7:6272] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 166, in login
+    email = request.POST['email']
+  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'email'
+2019-04-09 01:37:33,625 [Thread-7:12812] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/new_plant/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'category'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 128, in new_plant
+    category = request.POST['category']
+  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'category'
+2019-04-09 01:42:58,587 [Thread-12:13972] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/new_plant/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'category'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 128, in new_plant
+    category = request.POST['category']
+  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'category'
+2019-04-09 01:44:08,355 [Thread-2:15156] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/new_plant/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 134, in new_plant
+    extension = os.path.splitext(file.name)[1]
+AttributeError: 'bytes' object has no attribute 'name'
+2019-04-09 01:46:59,715 [Thread-3:2152] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/new_plant/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 131, in new_plant
+    files = request.FILES.getList('avatar')
+AttributeError: 'MultiValueDict' object has no attribute 'getList'
+2019-04-09 01:47:58,974 [Thread-3:2152] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/new_plant/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 131, in new_plant
+    files = request.FILES.getList('avatar')
+AttributeError: 'MultiValueDict' object has no attribute 'getList'
+2019-04-09 02:04:12,996 [Thread-2:11076] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/new_plant/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 131, in new_plant
+    files = request.FILES.getList('avatar')
+AttributeError: 'MultiValueDict' object has no attribute 'getList'
