@@ -1,6 +1,7 @@
 import logging
 import os
 import uuid
+import time
 
 from django.core.paginator import Paginator
 from django.db import connection
@@ -99,9 +100,16 @@ def user_center(request):
         user = User.objects.filter(id=user_id).first()
 
         plants = Plant.objects.all()
-
         plant_category = Category.objects.all()
-        context = {'user': user, 'plants': plants, 'plant_category': plant_category}
+        user_plants = Plant.objects.filter(user=user_id).all()
+
+        user_gallery = Gallery.objects.filter(user=user_id).all()
+
+        context = {'user': user,
+                   'plants': plants,
+                   'plant_category': plant_category,
+                   'user_plant': user_plants,
+                   'gallery': user_gallery}
 
         return render(request, 'application/user_center.html', context)
 
@@ -143,6 +151,24 @@ def new_plant(request):
     sql = "insert into plant (name,address,avatar,user_id,category_id)" \
           "values ('%s','%s','%s','%s','%s')" % (name, address, file_name, user, category)
     cursor.execute(sql)
+
+    return redirect('user_center')
+
+
+def new_gallery(request):
+    user_id = request.COOKIES.get('user_id')
+    plant_id = request.POST['plant_id']
+    name = request.POST['name']
+    desc = request.POST['desc']
+    date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+
+    # sql = "insert into gallery (user_id,plant_id,name,desc,date)" \
+    #       "values (%d,%d,'%s','%s','%s')" % (int(user_id), int(plant_id), name, desc, date)
+    #
+    # with connection.cursor() as cursor:
+    #     cursor.execute(sql)
+
+    Gallery.objects.create(user_id=user_id, plant_id=plant_id, name=name, desc=desc, date=date)
 
     return redirect('user_center')
 

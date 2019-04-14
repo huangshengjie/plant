@@ -139,38 +139,37 @@
                 <i class="material-icons right">send</i>
             </button>
 
+            <ul>
+                {% for item in gallery %}
+                    <li>{{ item.name }}</li>
+                {% endfor %}
+            </ul>
         </div>
 
         <div id="section_new_gallery" style="display: none; margin-top: 45px">
-            <form action="{% url 'login' %}" method="post">
+            <form action="{% url 'new_gallery' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 <div class="input-field">
-                    <select>
+                    <select name="plant_id">
                         <option value="" disabled selected>请选择</option>
-                        <option value="1">植物1</option>
-                        <option value="2">植物2</option>
-                        <option value="3">植物3</option>
+                        {% for item in user_plant %}
+                            <option value="{{ item.id }}">{{ item.name }}</option>
+                        {% endfor %}
                     </select>
                     <label>植物</label>
                 </div>
 
                 <div class="input-field col s12">
                     <i class="material-icons prefix">textsms</i>
-                    <input type="text" id="autocomplete-input-gallery-name" class="autocomplete">
+                    <input name="name" type="text" id="autocomplete-input-gallery-name" class="autocomplete">
                     <label for="autocomplete-input-gallery-name">相册名</label>
                 </div>
 
                 <div class="input-field col s12">
                     <i class="material-icons prefix">textsms</i>
-                    <input type="text" id="autocomplete-input-gallery-desc" class="autocomplete">
+                    <input name="desc" type="text" id="autocomplete-input-gallery-desc" class="autocomplete">
                     <label for="autocomplete-input-gallery-desc">描述</label>
-                </div>
-
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">textsms</i>
-                    <input type="text" id="autocomplete-input-gallery-date" class="datepicker">
-                    <label for="autocomplete-input-gallery-date">日期</label>
                 </div>
 
                 <div>
