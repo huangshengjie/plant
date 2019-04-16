@@ -83,7 +83,12 @@ def notify_content(request):
 
 
 def rank(request):
-    context = {'notify': ''}
+    ranks = Rank.objects.all()
+    first_rank = ranks.first()
+
+    votes = Vote.objects.all()
+
+    context = {'ranks': ranks, 'first_rank': first_rank, 'votes': votes}
     return render(request, 'application/rank.html', context)
 
 

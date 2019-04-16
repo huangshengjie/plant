@@ -15,13 +15,32 @@
 {% include 'application/include/nav.html' %}
 
 <ul id="tabs-swipe-demo" class="tabs" style="text-align: center;margin-bottom: 10px">
-    <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
-    <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
-    <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
+    {% for item in ranks %}
+        {% if item.id == first_rank.id %}
+            <li class="tab col s3"><a href="#tab-{{ item.id }}">{{ item.subject }}</a></li>
+        {% else %}
+            <li class="tab col s3"><a class="active" href="#tab-{{ item.id }}">{{ item.subject }}</a></li>
+        {% endif %}
+    {% endfor %}
 </ul>
-<div id="test-swipe-1" class="col s12 blue">Test 1</div>
-<div id="test-swipe-2" class="col s12 red">Test 2</div>
-<div id="test-swipe-3" class="col s12 green">Test 3</div>
+
+{% for rank in ranks %}
+    <div id="tab-{{ rank.id }}" class="col s12 blue">
+        {{ rank.id }} : {{ rank.subject }}
+        <ul>
+            {% for vote in votes %}
+                <li>
+                    {{ vote.id }} : {{ vote.rank }}
+                </li>
+                {% if vote.rank == rank.subject %}
+                    <li>
+                        {{ vote.id }} : {{ vote.rank }}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endfor %}
 
 <ul class="collection with-header horizontally-margin">
     {% for item in notify %}
