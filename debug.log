@@ -1771,3 +1771,43 @@ Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 485, in __init__
     raise TypeError("'%s' is an invalid keyword argument for this function" % kwarg)
 TypeError: 'user_id' is an invalid keyword argument for this function
+2019-04-21 21:50:13,939 [Thread-3:9852] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 195, in login
+    email = request.POST['email']
+  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'email'
+2019-04-21 23:21:12,193 [Thread-2:8708] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/login/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\workspace-python\plant\application\views.py", line 195, in login
+    email = request.POST['email']
+  File "D:\development\Python\lib\site-packages\django\utils\datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'email'
