@@ -2,111 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad386f54-2a86-4149-b91f-d24de7f7bbec" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/admins/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/charts-chartjs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/charts-flot.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/charts-peity.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/font-fontawesome.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/font-themify.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/forms-advanced.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/forms-basic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/maps-gmap.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/maps-vector.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/page-login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/page-register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/pages-forget.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/tables-basic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/tables-data.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/ui-alerts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/ui-badges.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/ui-buttons.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/ui-cards.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/ui-grids.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/ui-modals.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/ui-progressbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/ui-switches.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/ui-tabs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/ui-typgraphy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/templates/admins/widgets.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admins/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/css/cs-skin-elastic.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/css/lib/chosen/chosen-sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/css/lib/chosen/chosen-sprite@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/css/lib/chosen/chosen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/css/lib/chosen/chosen.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/css/lib/datatable/buttons.bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/css/lib/datatable/buttons.dataTables.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/css/lib/datatable/dataTables.bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/css/lib/vector-map/jqvmap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/css/style.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/fonts/icomoon/icomoon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/fonts/icomoon/icomoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/fonts/icomoon/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/fonts/icomoon/icomoon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/init/chartjs-init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/init/datatables-init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/init/flot-chart-init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/init/fullcalendar-init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/init/gmap-init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/init/peitychart-init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/init/vector-init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/init/weather-init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/chosen/chosen.jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/chosen/chosen.jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/chosen/chosen.proto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/chosen/chosen.proto.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/buttons.bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/buttons.colVis.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/buttons.flash.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/buttons.html5.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/buttons.print.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/dataTables.bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/dataTables.buttons.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/datatables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/jquery-1.12.4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/jszip.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/pdfmake.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/data-table/vfs_fonts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/gmap/gmapApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/gmap/gmaps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/lib/gmap/gmaps.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/vmap.sampledata.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/js/widgets.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/scss/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/scss/style.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/assets/scss/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/admin.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/avatar/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/avatar/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/avatar/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/avatar/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/avatar/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/avatar/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/avatar/64-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/avatar/64-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/logo.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admins/images/logo2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controller/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/admins/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controller/gallery.py" beforeDir="false" afterPath="$PROJECT_DIR$/admins/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controller/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/middleware.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controller/notify.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/admins/assets/fonts/icomoon/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controller/rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/admins/images/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controller/user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/plant/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/0002_auto_20190407_2335.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/0003_auto_20190408_0120.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plant/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/plant/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -135,10 +34,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="23">
               <caret line="121" column="4" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="4" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -150,47 +49,26 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plant/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="978">
-              <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
+            <state relative-caret-position="356">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#629#661#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plant/settings.py">
+      <file leaf-file-name="manage.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="322">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admins/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admins/templates/admins/index.html">
+      <file leaf-file-name="my.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="15" selection-start-line="15" selection-end-line="15" />
@@ -198,41 +76,48 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/development/Python/Lib/site-packages/django/contrib/admin/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plant/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="85" selection-start-line="85" selection-end-line="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plant/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admins/migrations/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="276">
-              <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="debug.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/debug.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="366">
-              <caret line="1116" column="17" selection-start-line="1116" selection-start-column="17" selection-end-line="1116" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="middleware.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/middleware.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manager.py" pinned="false" current-in-tab="false">
-        <entry file="file://D:/development/Python/Lib/site-packages/django/db/models/manager.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="138" column="8" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="8" />
+              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -315,10 +200,10 @@
         <option value="$PROJECT_DIR$/application/templates/application/rank.html" />
         <option value="$PROJECT_DIR$/admins/urls.py" />
         <option value="$PROJECT_DIR$/admins/views.py" />
-        <option value="$PROJECT_DIR$/plant/urls.py" />
         <option value="$PROJECT_DIR$/admins/templates/admins/index.html" />
-        <option value="$PROJECT_DIR$/plant/settings.py" />
         <option value="$PROJECT_DIR$/application/middleware.py" />
+        <option value="$PROJECT_DIR$/plant/settings.py" />
+        <option value="$PROJECT_DIR$/plant/urls.py" />
       </list>
     </option>
   </component>
@@ -345,7 +230,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -353,15 +237,11 @@
               <item name="plant" type="b2602c69:ProjectViewProjectNode" />
               <item name="plant" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="plant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="plant" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -441,9 +321,9 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32881355" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.51355934" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5186441" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32881355" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4881356" visible="true" weight="0.17954724" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4881356" visible="true" weight="0.17954724" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.23887588" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -467,21 +347,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controller/user.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controller/news.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controller/gallery.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controller/notify.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controller/rank.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controller/notify.py" />
+    <entry file="file://$PROJECT_DIR$/application/controller/rank.py" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/04ba557c-8680-4408-a528-2d5f48284f30/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -489,25 +356,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/development/Python/Lib/site-packages/pymysql/connections.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="1048" column="13" selection-start-line="1048" selection-start-column="13" selection-end-line="1048" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/development/Python/Lib/site-packages/pymysql/connections.py" />
     <entry file="file://$PROJECT_DIR$/application/migrations/0002_auto_20190331_2212.py" />
     <entry file="file://$PROJECT_DIR$/application/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plant/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -518,13 +372,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/development/Python/Lib/site-packages/django/contrib/admin/options.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20236">
-          <caret line="573" column="8" selection-start-line="573" selection-start-column="8" selection-end-line="573" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/development/Python/Lib/site-packages/django/contrib/admin/options.py" />
     <entry file="file://$PROJECT_DIR$/application/templates/application/show.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -538,13 +386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="87" column="19" lean-forward="true" selection-start-line="67" selection-start-column="12" selection-end-line="87" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
@@ -628,13 +469,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/templates/application/rank.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="989">
@@ -672,7 +506,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admins/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="92">
           <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -689,36 +523,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/debug.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="366">
+        <state relative-caret-position="25668">
           <caret line="1116" column="17" selection-start-line="1116" selection-start-column="17" selection-end-line="1116" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/development/Python/Lib/site-packages/django/db/models/manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="138" column="8" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plant/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plant/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/development/Python/Lib/site-packages/django/db/models/manager.py" />
     <entry file="file://$PROJECT_DIR$/application/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="978">
-          <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
+        <state relative-caret-position="4209">
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -727,8 +541,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/middleware.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="92">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
@@ -738,17 +552,68 @@
     <entry file="file://$PROJECT_DIR$/application/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
-          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="23">
           <caret line="121" column="4" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="4" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/development/Python/Lib/site-packages/django/contrib/admin/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plant/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plant/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admins/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plant/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="e#629#661#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
