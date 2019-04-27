@@ -59,6 +59,7 @@
     <div class="col s9">
         <div id="section_basic">
             <h5>基本信息</h5>
+            <p id="user_id" style="display: none">{{ user.id }}</p>
             <div class="divider"></div>
             <div class="section">
                 <h5>用户名</h5>
@@ -184,44 +185,41 @@
             <h5>修改账户</h5>
             <div class="divider"></div>
             <div class="row">
-                <form action="{% url 'user_update' %}" method="post" class="col s12">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2_name" name="name" class="materialize-textarea"
-                                      maxlength="10">{{ user.name }}</textarea>
-                            <label for="icon_prefix2_name">用户名</label>
-                        </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="icon_prefix2_name" name="name" class="materialize-textarea"
+                                  maxlength="10">{{ user.name }}</textarea>
+                        <label for="icon_prefix2_name">用户名</label>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2_password" name="password" class="materialize-textarea"
-                                      maxlength="10">{{ user.password }}</textarea>
-                            <label for="icon_prefix2_password">密码</label>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="icon_prefix2_password" name="password" class="materialize-textarea"
+                                  maxlength="10">{{ user.password }}</textarea>
+                        <label for="icon_prefix2_password">密码</label>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2_email" name="email" class="materialize-textarea"
-                                      maxlength="10">{{ user.email }}</textarea>
-                            <label for="icon_prefix2_email">邮箱</label>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="icon_prefix2_email" name="email" class="materialize-textarea"
+                                  maxlength="10">{{ user.email }}</textarea>
+                        <label for="icon_prefix2_email">邮箱</label>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="icon_prefix2_phone" name="phone" class="materialize-textarea"
-                                      maxlength="11">{{ user.phone }}</textarea>
-                            <label for="icon_prefix2_phone">手机号</label>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="icon_prefix2_phone" name="phone" class="materialize-textarea"
+                                  maxlength="11">{{ user.phone }}</textarea>
+                        <label for="icon_prefix2_phone">手机号</label>
                     </div>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">提交
-                        <i class="material-icons right">send</i>
-                    </button>
-                </form>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action" onclick="updateUser()">提交
+                    <i class="material-icons right">send</i>
+                </button>
             </div>
         </div>
     </div>
@@ -276,6 +274,60 @@
         document.getElementById("section_gallery").style.display = "none";
         document.getElementById("section_new_gallery").style.display = "none";
         document.getElementById("section_update").style.display = "none";
+    }
+
+    function updateUser() {
+        let xmlhttp;
+        if (window.XMLHttpRequest) {
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                console.log(xmlhttp.responseText);
+                let toastHTML = '<span>修改成功</span><button class="btn-flat toast-action">确定</button>';
+                M.toast({html: toastHTML});
+
+                resetStatus();
+                document.getElementById("section_basic").style.display = "block";
+            }
+        };
+        xmlhttp.open("POST", "http://127.0.0.1:8000/api/update_user/", true);
+        xmlhttp.setRequestHeader("Content-type", "application/json");
+
+        let idStr = document.getElementById("user_id").innerText;
+        let id = parseInt(idStr);
+        let name = document.getElementById("icon_prefix2_name").value;
+        let password = document.getElementById("icon_prefix2_password").value;
+        let email = document.getElementById("icon_prefix2_email").value;
+        let phone = document.getElementById("icon_prefix2_phone").value;
+
+        console.log(idStr);
+
+        let json = {
+            id: id,
+            name: name,
+            password: password,
+            email: email,
+            phone: phone
+        };
+        xmlhttp.send(JSON.stringify(json));
+    }
+
+    function getCookie(name) {
+        var cookies = document.cookie;
+        var list = cookies.split("; ");          // 解析出名/值对列表
+
+        for (var i = 0; i < list.length; i++) {
+            var arr = list[i].split("=");          // 解析出名和值
+            if (arr[0] == name)
+                return decodeURIComponent(arr[1]);   // 对cookie值解码
+        }
+        return "";
     }
 </script>
 </body>
