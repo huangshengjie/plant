@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>识花</title>
+
+    {% load static %}
+    <link rel="icon" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<style>
+    #img_plant {
+        width: 200px;
+        height: 200px;
+    }
+
+    #img_decode {
+        width: 45px;
+        height: 45px;
+        margin-left: 40px;
+        margin-top: 65px;
+    }
+
+    #text_decode {
+        margin-left: 35px;
+        margin-top: 1px;
+    }
+
+    a {
+        color: #000000;
+    }
+
+    #img_modal_success {
+        width: 60px;
+        height: 60px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    #h4_modal_success {
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+</style>
+<body>
+{% include 'application/include/nav.html' %}
+
+<div class="row container" style="margin-top: 30px">
+    <div class="col s6">
+        <div class="row">
+            <div class="col">
+                <img id="img_plant" src="{% static 'images/tf-plant-ic-1.png' %}">
+            </div>
+            <div class="col">
+                <a class="modal-trigger" href="javascript:void(0);" onclick="f()">
+                    <img id="img_decode" src="{% static 'images/tf-plant-ic-2.png' %}">
+                    <p id="text_decode">开始识别</p>
+                </a>
+            </div>
+        </div>
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>选择植物</span>
+                <input id="file_plant" type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="选择一张图片">
+            </div>
+        </div>
+    </div>
+    <div class="col s6">
+        <div class="divider"></div>
+        <div class="section">
+            <h5>类别</h5>
+            <p id="text_category">---</p>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <h5>百科</h5>
+            <p id="text_wiki" onclick="to_wiki()">--</p>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <h5>相似</h5>
+            <p>--</p>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <h5>相识</h5>
+            <p>--</p>
+        </div>
+    </div>
+</div>
+
+<div id="modal1" class="modal">
+    <div id="modal_process">
+        <div class="modal-content">
+            <h4>识别中</h4>
+            <p>系统正在进行分析，请耐心等待</p>
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">取消</a>
+        </div>
+    </div>
+
+    <div id="modal_done" class="modal-content" style="display: none">
+        <div class="row">
+            <div class="col">
+                <img id="img_modal_success" src="{% static 'images/tf-plant-ic-3.png' %}">
+            </div>
+            <div class="col">
+                <h4 id="h4_modal_success">识别完成</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'application/include/footer.html' %}
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="{% static 'js/materialize.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script>
+    let wiki_href = '';
+
+    document.getElementById("file_plant").addEventListener("change", function () {
+        let file = document.getElementById('file_plant').files;
+
+        let img = document.getElementById('img_plant');
+        img.src = window.URL.createObjectURL(file[0]);
+    });
+
+    function f() {
+        document.getElementById("modal_process").style.display = "block";
+        document.getElementById("modal_done").style.display = "none";
+
+        let elem = document.getElementById('modal1');
+        let instance = M.Modal.getInstance(elem);
+        instance.open();
+        f1()
+    }
+
+    function f1() {
+        let formData = new FormData();
+        formData.append('file', $('#file_plant')[0].files[0]);  //添加图片信息的参数
+        $.ajax({
+            url: 'http://127.0.0.1:8000/tf/predictions/',
+            type: 'POST',
+            cache: false, //上传文件不需要缓存
+            data: formData,
+            processData: false, // 告诉jQuery不要去处理发送的数据
+            contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+            success: function (data) {
+                console.log(data);
+                let text_category = document.getElementById("text_category");
+                let category = '';
+                for (let i = 0; i < data.data.length; i++) {
+                    if (data.data[i].score > 0.9) {
+                        wiki_href = 'https://baike.baidu.com/item/' + data.data[i].plant;
+                    }
+                    if (i > 2) break;
+                    category += data.data[i].plant + ': ' + data.data[i].score + '\n';
+                }
+                text_category.innerText = category;
+
+                 let text_wiki = document.getElementById("text_wiki");
+                 text_wiki.innerText = wiki_href;
+
+                document.getElementById("modal_process").style.display = "none";
+                document.getElementById("modal_done").style.display = "block";
+
+                setTimeout(function () {
+                    let elem = document.getElementById('modal1');
+                    let instance = M.Modal.getInstance(elem);
+                    instance.close();
+                }, 3000);
+            },
+            error: function (data) {
+                alert('识别失败');
+            }
+        })
+    }
+
+    function to_wiki() {
+         window.open(wiki_href, '_blank');
+    }
+</script>
+</body>
+</html>

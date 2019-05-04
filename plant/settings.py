@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'application.apps.ApplicationConfig',
     'api.apps.ApiConfig',
     'admins.apps.AdminsConfig',
+    'tf.apps.TfConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

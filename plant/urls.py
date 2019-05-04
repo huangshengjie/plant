@@ -22,5 +22,6 @@ urlpatterns = [
     path('plant/', include('application.urls')),
     path('api/', include('api.urls')),
     path('admins/', include('admins.urls')),
+    path('tf/', include('tf.urls')),
     path('admin/', admin.site.urls),
 ]

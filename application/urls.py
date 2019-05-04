@@ -11,6 +11,7 @@ urlpatterns = [
     path('registered/', views.registered, name='registered'),
     path('user_center/', views.user_center, name='user_center'),
     path('new_plant/', views.new_plant, name='new_plant'),
+    path('plant_detail/<int:plant_id>/', views.plant_detail, name='plant_detail'),
     path('new_gallery/', views.new_gallery, name='new_gallery'),
     path('user_update/', views.user_update, name='user_update'),
     path('news/', views.news, name='news'),
@@ -19,6 +20,7 @@ urlpatterns = [
     path('notify_content/', views.notify_content, name='notify_content'),
     path('rank/', views.rank, name='rank'),
     path('gallery/', views.gallery, name='gallery'),
+    path('tf_plant/', views.tf_plant, name='tf_plant'),
 
     path('upload/', views.upload, name='upload'),
 ]

@@ -48,6 +48,11 @@ def index(request):
     return render(request, 'application/index.html', context)
 
 
+def tf_plant(request):
+    context = {}
+    return render(request, 'application/tf-plant.html', context)
+
+
 def news(request):
     news_list = News.objects.all()
     paginator = Paginator(news_list, 2)  # Show 2 contacts per page
@@ -134,6 +139,13 @@ def user_update(request):
 
     return redirect('user_center')
     # return render(request, 'application/user_center.html')
+
+
+def plant_detail(request, plant_id):
+    plant = Plant.objects.filter(id=plant_id).first()
+
+    context = {'plant': plant}
+    return render(request, 'application/plant.html', context)
 
 
 def new_plant(request):

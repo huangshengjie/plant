@@ -83,16 +83,16 @@
         </div>
 
         <div id="section_plant" style="display: none; margin-top: 45px">
-            <button id="btn_new_plant" class="btn waves-effect waves-light">创建我的植物
-                <i class="material-icons right">send</i>
+            <button id="btn_new_plant" class="btn waves-effect waves-light">
+                创建我的植物<i class="material-icons right">send</i>
             </button>
 
-            <div style="display: flex; margin-top: 20px">
+            <div style="display: flex; margin-top: 20px; width: 200px">
                 {% for item in plants %}
-                    <a href="">
+                    <a href="{% url 'plant_detail' item.id%}">
                         <div style="margin-right: 15px">
                             <img src="/static/{{ item.avatar }}" style="width: 200px;height: 200px">
-                            <p>{{ item.name }}</p>
+                            <p style="color: #000000">{{ item.name }}</p>
                         </div>
                     </a>
                 {% endfor %}
@@ -184,7 +184,7 @@
         <div id="section_update" style="display: none">
             <h5>修改账户</h5>
             <div class="divider"></div>
-            <div class="row">
+            <div class="row" style="margin-top: 20px">
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">mode_edit</i>
@@ -316,18 +316,6 @@
             phone: phone
         };
         xmlhttp.send(JSON.stringify(json));
-    }
-
-    function getCookie(name) {
-        var cookies = document.cookie;
-        var list = cookies.split("; ");          // 解析出名/值对列表
-
-        for (var i = 0; i < list.length; i++) {
-            var arr = list[i].split("=");          // 解析出名和值
-            if (arr[0] == name)
-                return decodeURIComponent(arr[1]);   // 对cookie值解码
-        }
-        return "";
     }
 </script>
 </body>
