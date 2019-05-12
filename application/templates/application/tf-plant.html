@@ -73,7 +73,7 @@
     <div class="col s6">
         <div class="divider"></div>
         <div class="section">
-            <h5>类别</h5>
+            <h5>识别结果</h5>
             <p id="text_category">---</p>
         </div>
         <div class="divider"></div>
@@ -98,7 +98,7 @@
     <div id="modal_process">
         <div class="modal-content">
             <h4>识别中</h4>
-            <p>系统正在进行分析，请耐心等待</p>
+            <p>正在进行分析，请耐心等待</p>
             <div class="progress">
                 <div class="indeterminate"></div>
             </div>
@@ -158,18 +158,23 @@
             success: function (data) {
                 console.log(data);
                 let text_category = document.getElementById("text_category");
-                let category = '';
+                let can_diff = false;
                 for (let i = 0; i < data.data.length; i++) {
-                    if (data.data[i].score > 0.9) {
-                        wiki_href = 'https://baike.baidu.com/item/' + data.data[i].plant;
+                    if (data.data[i].score >= 0.75) {
+                        text_category.innerText = '这是一株' + data.data[i].plant + ' [' + data.data[i].score + ']';
+                        can_diff = true;
+                        break;
                     }
-                    if (i > 2) break;
-                    category += data.data[i].plant + ': ' + data.data[i].score + '\n';
-                }
-                text_category.innerText = category;
 
-                 let text_wiki = document.getElementById("text_wiki");
-                 text_wiki.innerText = wiki_href;
+                    if (data.data[i].score >= 0.30 && data.data[i].score < 0.75) {
+                        text_category.innerText = '可能是一株' + data.data[i].plant + ' [' + data.data[i].score + ']';
+                        can_diff = true;
+                        break;
+                    }
+                }
+                if (can_diff === false) {
+                    text_category.innerText = '识别失败，无法识别出植物的种类';
+                }
 
                 document.getElementById("modal_process").style.display = "none";
                 document.getElementById("modal_done").style.display = "block";
@@ -186,8 +191,13 @@
         })
     }
 
+    function plant(name, score) {
+        this.name = name;
+        this.score = score;
+    }
+
     function to_wiki() {
-         window.open(wiki_href, '_blank');
+        window.open(wiki_href, '_blank');
     }
 </script>
 </body>

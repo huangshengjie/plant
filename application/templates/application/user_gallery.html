@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>用户相册</title>
+
+    {% load static %}
+    <link rel="icon" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+{% include 'application/include/nav.html' %}
+
+<div class="row container" style="margin-top: 20px">
+    <div class="col s6">
+        <img src="/static/{{ plant.avatar }}" style="width: 200px;height: 200px;">
+        <p style="color: #000000;">{{ plant.name }}</p>
+    </div>
+    <div class="col s6">
+        <div class="divider"></div>
+        <div class="section">
+            <h5>类别</h5>
+            <p>{{ plant.category }}</p>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <h5>产地</h5>
+            <p>{{ plant.address }}</p>
+        </div>
+    </div>
+</div>
+
+{% include 'application/include/footer.html' %}
+
+<script src="{% static 'js/materialize.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

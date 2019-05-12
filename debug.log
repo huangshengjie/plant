@@ -1,8 +1,9 @@
-INFO 2019-04-28 00:52:37,825 danielUPDATE user SET name = 'daniel90911111111111111111111111111110', password = '123', email = '123@qq.com', phone = '18940980522' WHERE id = 1
-2019-04-28 00:52:37,975 [Thread-2:2700] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/update_user/
+INFO 2019-05-12 14:23:13,918 daniel1
+INFO 2019-05-12 14:24:32,113 daniel1
+2019-05-13 01:15:00,759 [Thread-3:3760] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/rank/
 Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 82, in _execute
-    return self.cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
   File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
     return self.cursor.execute(query, args)
   File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
@@ -21,7 +22,7 @@ Traceback (most recent call last):
     err.raise_mysql_exception(self._data)
   File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
-pymysql.err.DataError: (1406, "Data too long for column 'name' at row 1")
+pymysql.err.ProgrammingError: (1146, "Table 'plant.application_subject' doesn't exist")
 
 The above exception was the direct cause of the following exception:
 
@@ -32,8 +33,44 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\api\views.py", line 35, in update_user
-    cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1672, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 744, in get_changelist_instance
+    sortable_by,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 405, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 135, in get_filters
+    self.model, self.model_admin, field_path=field_path,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 159, in create
+    return list_filter_class(field, request, params, model, model_admin, field_path=field_path)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 170, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 201, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\fields\__init__.py", line 831, in get_choices
+    for x in rel_model._default_manager.complex_filter(limit_choices_to).order_by(*ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 274, in __iter__
+    self._fetch_all()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
   File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
     return super().execute(sql, params)
   File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
@@ -44,8 +81,8 @@ Traceback (most recent call last):
     return self.cursor.execute(sql, params)
   File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
     raise dj_exc_value.with_traceback(traceback) from exc_value
-  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 82, in _execute
-    return self.cursor.execute(sql)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
   File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
     return self.cursor.execute(query, args)
   File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
@@ -64,68 +101,32 @@ Traceback (most recent call last):
     err.raise_mysql_exception(self._data)
   File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
-django.db.utils.DataError: (1406, "Data too long for column 'name' at row 1")
-INFO 2019-04-28 00:53:44,387 danielUPDATE user SET name = 'daniel910', password = '123', email = '123@qq.com', phone = '18940980522' WHERE id = 1
-INFO 2019-04-28 00:53:44,392 daniel0
-INFO 2019-04-28 01:15:06,830 danielUPDATE user SET name = 'daniel1514', password = '123', email = '123@qq.com', phone = '18940980522' WHERE id = 1
-INFO 2019-04-28 01:15:06,837 daniel0
-INFO 2019-04-28 01:17:05,905 danielUPDATE user SET name = 'daniel666', password = '123', email = '123@qq.com', phone = '18940980522' WHERE id = 1
-INFO 2019-04-28 01:17:05,910 daniel0
-2019-04-28 01:28:55,796 [Thread-9:10656] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/update_user/
+django.db.utils.ProgrammingError: (1146, "Table 'plant.application_subject' doesn't exist")
+2019-05-13 01:16:20,358 [Thread-3:13824] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/rank/
 Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\api\views.py", line 33, in update_user
-    % (name, password, email, phone, id)
-TypeError: %d format: a number is required, not str
-2019-04-28 01:34:38,821 [Thread-11:3396] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/update_user/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\api\views.py", line 33, in update_user
-    % (name, password, email, phone, id)
-TypeError: %d format: a number is required, not str
-2019-04-28 01:40:40,577 [Thread-13:10816] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/update_user/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\api\views.py", line 33, in update_user
-    % (name, password, email, phone, id)
-TypeError: %d format: a number is required, not NoneType
-2019-04-28 01:41:28,452 [Thread-13:10816] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/update_user/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\api\views.py", line 33, in update_user
-    % (name, password, email, phone, id)
-TypeError: %d format: a number is required, not NoneType
-INFO 2019-04-28 01:43:28,755 danielUPDATE user SET name = 'daniel666', password = '123', email = '123@qq.com', phone = '18940980522' WHERE id = 1
-INFO 2019-04-28 01:43:28,762 daniel0
-INFO 2019-04-28 01:44:58,686 danielUPDATE user SET name = 'daniel666', password = '123', email = '123@qq.com', phone = '18940980522' WHERE id = 1
-INFO 2019-04-28 01:44:58,693 daniel0
-2019-04-29 23:11:15,199 [Thread-16:9008] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admins/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 470, in parse
-    compile_func = self.tags[command]
-KeyError: 'static'
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'plant.application_subject' doesn't exist")
 
-During handling of the above exception, another exception occurred:
+The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
@@ -134,226 +135,100 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\admins\views.py", line 6, in index
-    return render(request, 'admins/index.html', context)
-  File "D:\development\Python\lib\site-packages\django\shortcuts.py", line 36, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-  File "D:\development\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-  File "D:\development\Python\lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 171, in render
-    return self._render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 937, in render
-    bit = node.render_annotated(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\loader_tags.py", line 176, in render
-    template = context.template.engine.get_template(template_name)
-  File "D:\development\Python\lib\site-packages\django\template\engine.py", line 143, in get_template
-    template, origin = self.find_template(template_name)
-  File "D:\development\Python\lib\site-packages\django\template\engine.py", line 125, in find_template
-    template = loader.get_template(name, skip=skip)
-  File "D:\development\Python\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
-    contents, origin, origin.template_name, self.engine,
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 156, in __init__
-    self.nodelist = self.compile_nodelist()
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
-    return parser.parse()
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 472, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 534, in invalid_block_tag
-    "or load this tag?" % (token.lineno, command)
-django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 4: 'static'. Did you forget to register or load this tag?
-2019-04-29 23:12:01,405 [Thread-3:12964] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admins/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1672, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 744, in get_changelist_instance
+    sortable_by,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 405, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 135, in get_filters
+    self.model, self.model_admin, field_path=field_path,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 159, in create
+    return list_filter_class(field, request, params, model, model_admin, field_path=field_path)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 170, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 201, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\fields\__init__.py", line 831, in get_choices
+    for x in rel_model._default_manager.complex_filter(limit_choices_to).order_by(*ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 274, in __iter__
+    self._fetch_all()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'plant.application_subject' doesn't exist")
+2019-05-13 01:20:54,660 [Thread-3:4660] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/subject/
 Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 470, in parse
-    compile_func = self.tags[command]
-KeyError: 'static'
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'plant.application_subject' doesn't exist")
 
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\admins\views.py", line 6, in index
-    return render(request, 'admins/index.html', context)
-  File "D:\development\Python\lib\site-packages\django\shortcuts.py", line 36, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-  File "D:\development\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-  File "D:\development\Python\lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 171, in render
-    return self._render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 937, in render
-    bit = node.render_annotated(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\loader_tags.py", line 176, in render
-    template = context.template.engine.get_template(template_name)
-  File "D:\development\Python\lib\site-packages\django\template\engine.py", line 143, in get_template
-    template, origin = self.find_template(template_name)
-  File "D:\development\Python\lib\site-packages\django\template\engine.py", line 125, in find_template
-    template = loader.get_template(name, skip=skip)
-  File "D:\development\Python\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
-    contents, origin, origin.template_name, self.engine,
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 156, in __init__
-    self.nodelist = self.compile_nodelist()
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
-    return parser.parse()
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 472, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 534, in invalid_block_tag
-    "or load this tag?" % (token.lineno, command)
-django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 4: 'static'. Did you forget to register or load this tag?
-2019-05-04 02:10:50,235 [Thread-28:15336] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/user_center/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\application\views.py", line 119, in user_center
-    return render(request, 'application/user_center.html', context)
-  File "D:\development\Python\lib\site-packages\django\shortcuts.py", line 36, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-  File "D:\development\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-  File "D:\development\Python\lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 171, in render
-    return self._render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 163, in _render
-    return self.nodelist.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 937, in render
-    bit = node.render_annotated(context)
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\defaulttags.py", line 209, in render
-    nodelist.append(node.render_annotated(context))
-  File "D:\development\Python\lib\site-packages\django\template\base.py", line 904, in render_annotated
-    return self.render(context)
-  File "D:\development\Python\lib\site-packages\django\template\defaulttags.py", line 443, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-  File "D:\development\Python\lib\site-packages\django\urls\base.py", line 90, in reverse
-    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
-  File "D:\development\Python\lib\site-packages\django\urls\resolvers.py", line 660, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'plant_detail' not found. 'plant_detail' is not a valid view function or pattern name.
-2019-05-04 02:18:43,168 [Thread-3:2832] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/plant_detail/1
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-TypeError: plant_detail() got an unexpected keyword argument 'id'
-2019-05-04 02:19:59,404 [Thread-2:1028] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/plant_detail/1
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-TypeError: plant_detail() got an unexpected keyword argument 'id'
-2019-05-04 02:20:21,618 [Thread-2:1028] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /plant/plant_detail/1
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-TypeError: plant_detail() got an unexpected keyword argument 'id'
-2019-05-04 18:51:50,469 [Thread-2:9772] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 22, in tf
-    image_data = request.FILES.getlist('files')[0]
-IndexError: list index out of range
-2019-05-04 18:52:05,168 [Thread-2:9772] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 22, in tf
-    image_data = request.FILES.getlist('files')[0]
-IndexError: list index out of range
-2019-05-04 18:53:15,087 [Thread-2:9772] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 22, in tf
-    image_data = request.FILES.getlist('files')[0]
-IndexError: list index out of range
-2019-05-04 18:55:27,044 [Thread-2:9772] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 25, in tf
-    label_lines = [line.rstrip() for line in tf.gfile.GFile("model/retrained_labels.txt")]
-AttributeError: 'function' object has no attribute 'gfile'
-2019-05-04 18:58:39,925 [Thread-2:6084] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 25, in tf
-    label_lines = [line.rstrip() for line in tf.gfile.GFile("model/retrained_labels.txt")]
-AttributeError: 'function' object has no attribute 'gfile'
-2019-05-04 19:06:58,200 [Thread-2:15492] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 25, in tf
-    label_lines = [line.rstrip() for line in tf.gfile.FastGFile("model/retrained_labels.txt")]
-AttributeError: 'function' object has no attribute 'gfile'
-2019-05-04 19:13:44,469 [Thread-2:11172] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 1334, in _do_call
-    return fn(*args)
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 1319, in _run_fn
-    options, feed_dict, fetch_list, target_list, run_metadata)
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 1407, in _call_tf_sessionrun
-    run_metadata)
-tensorflow.python.framework.errors_impl.InternalError: Unable to get element as bytes.
-
-During handling of the above exception, another exception occurred:
+The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
@@ -362,28 +237,94 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 39, in tf_plant
-    predictions = sess.run(softmax_tensor, {'DecodeJpeg/contents:0': image_data})
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 929, in run
-    run_metadata_ptr)
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 1152, in _run
-    feed_dict_tensor, options, run_metadata)
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 1328, in _do_run
-    run_metadata)
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 1348, in _do_call
-    raise type(e)(node_def, op, message)
-tensorflow.python.framework.errors_impl.InternalError: Unable to get element as bytes.
-2019-05-04 19:17:39,143 [Thread-2:11284] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1672, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 744, in get_changelist_instance
+    sortable_by,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 82, in __init__
+    self.get_results(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 210, in get_results
+    result_count = paginator.count
+  File "D:\development\Python\lib\site-packages\django\utils\functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\development\Python\lib\site-packages\django\core\paginator.py", line 91, in count
+    return c()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 392, in count
+    return self.query.get_count(using=self.db)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 504, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 489, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'plant.application_subject' doesn't exist")
+2019-05-13 01:22:42,667 [Thread-3:13860] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/subject/
 Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 1334, in _do_call
-    return fn(*args)
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 1319, in _run_fn
-    options, feed_dict, fetch_list, target_list, run_metadata)
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 1407, in _call_tf_sessionrun
-    run_metadata)
-tensorflow.python.framework.errors_impl.InternalError: Unable to get element as bytes.
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'plant.subject' doesn't exist")
 
-During handling of the above exception, another exception occurred:
+The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
@@ -392,18 +333,95 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 39, in tf_plant
-    predictions = sess.run(softmax_tensor, {'DecodeJpeg/contents:0': image_data})
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 929, in run
-    run_metadata_ptr)
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 1152, in _run
-    feed_dict_tensor, options, run_metadata)
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 1328, in _do_run
-    run_metadata)
-  File "D:\development\Python\lib\site-packages\tensorflow\python\client\session.py", line 1348, in _do_call
-    raise type(e)(node_def, op, message)
-tensorflow.python.framework.errors_impl.InternalError: Unable to get element as bytes.
-2019-05-04 19:36:52,547 [Thread-2:12632] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1672, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 744, in get_changelist_instance
+    sortable_by,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 82, in __init__
+    self.get_results(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 210, in get_results
+    result_count = paginator.count
+  File "D:\development\Python\lib\site-packages\django\utils\functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\development\Python\lib\site-packages\django\core\paginator.py", line 91, in count
+    return c()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 392, in count
+    return self.query.get_count(using=self.db)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 504, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 489, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'plant.subject' doesn't exist")
+2019-05-13 01:25:51,048 [Thread-3:13860] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/subject/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'plant.subject' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -411,10 +429,95 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 15, in tf_plant
-    obj.stdin.write('label_image.py D:\\workspace\\workspace-python\\tensorflow-image\\1.jpg')
-TypeError: a bytes-like object is required, not 'str'
-2019-05-04 19:39:06,844 [Thread-2:15864] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1672, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 744, in get_changelist_instance
+    sortable_by,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 82, in __init__
+    self.get_results(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 210, in get_results
+    result_count = paginator.count
+  File "D:\development\Python\lib\site-packages\django\utils\functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\development\Python\lib\site-packages\django\core\paginator.py", line 91, in count
+    return c()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 392, in count
+    return self.query.get_count(using=self.db)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 504, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 489, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'plant.subject' doesn't exist")
+2019-05-13 01:27:35,165 [Thread-3:6356] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/vote/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'rank.subject_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -422,10 +525,101 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 16, in tf_plant
-    obj.stdin.write('print 1 \n ')
-TypeError: a bytes-like object is required, not 'str'
-2019-05-04 19:43:58,251 [Thread-2:4572] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1672, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 744, in get_changelist_instance
+    sortable_by,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 405, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 135, in get_filters
+    self.model, self.model_admin, field_path=field_path,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 159, in create
+    return list_filter_class(field, request, params, model, model_admin, field_path=field_path)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 170, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 201, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\fields\__init__.py", line 831, in get_choices
+    for x in rel_model._default_manager.complex_filter(limit_choices_to).order_by(*ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 274, in __iter__
+    self._fetch_all()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1054, "Unknown column 'rank.subject_id' in 'field list'")
+2019-05-13 01:27:42,401 [Thread-3:6356] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/rank/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'plant.subject' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -433,10 +627,101 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 16, in tf_plant
-    obj.stdin.write('print 1 \n')
-TypeError: a bytes-like object is required, not 'str'
-2019-05-04 19:45:28,688 [Thread-2:11196] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1672, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 744, in get_changelist_instance
+    sortable_by,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 405, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 135, in get_filters
+    self.model, self.model_admin, field_path=field_path,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 159, in create
+    return list_filter_class(field, request, params, model, model_admin, field_path=field_path)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 170, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 201, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\fields\__init__.py", line 831, in get_choices
+    for x in rel_model._default_manager.complex_filter(limit_choices_to).order_by(*ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 274, in __iter__
+    self._fetch_all()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'plant.subject' doesn't exist")
+2019-05-13 01:29:14,252 [Thread-2:15844] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/subject/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'plant.subject' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -444,10 +729,95 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 16, in tf_plant
-    obj.stdin.write('1+1')
-TypeError: a bytes-like object is required, not 'str'
-2019-05-04 23:27:23,509 [Thread-2:11824] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1672, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 744, in get_changelist_instance
+    sortable_by,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 82, in __init__
+    self.get_results(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 210, in get_results
+    result_count = paginator.count
+  File "D:\development\Python\lib\site-packages\django\utils\functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\development\Python\lib\site-packages\django\core\paginator.py", line 91, in count
+    return c()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 392, in count
+    return self.query.get_count(using=self.db)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 504, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 489, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'plant.subject' doesn't exist")
+2019-05-13 01:29:18,387 [Thread-2:15844] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/vote/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'rank.subject_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -455,10 +825,101 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 14, in tf_plant
-    image_data = request.FILES.getlist('files')[0]
-IndexError: list index out of range
-2019-05-04 23:34:04,233 [Thread-2:14080] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1672, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 744, in get_changelist_instance
+    sortable_by,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 405, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 135, in get_filters
+    self.model, self.model_admin, field_path=field_path,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 159, in create
+    return list_filter_class(field, request, params, model, model_admin, field_path=field_path)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 170, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 201, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\fields\__init__.py", line 831, in get_choices
+    for x in rel_model._default_manager.complex_filter(limit_choices_to).order_by(*ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 274, in __iter__
+    self._fetch_all()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1054, "Unknown column 'rank.subject_id' in 'field list'")
+2019-05-13 01:29:23,243 [Thread-2:15844] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/rank/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'plant.subject' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -466,18 +927,101 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 22, in tf_plant
-    return HttpResponse(json.dumps(result_json), content_type="application/json")
-  File "D:\development\Python\lib\json\__init__.py", line 231, in dumps
-    return _default_encoder.encode(obj)
-  File "D:\development\Python\lib\json\encoder.py", line 199, in encode
-    chunks = self.iterencode(o, _one_shot=True)
-  File "D:\development\Python\lib\json\encoder.py", line 257, in iterencode
-    return _iterencode(o, 0)
-  File "D:\development\Python\lib\json\encoder.py", line 180, in default
-    o.__class__.__name__)
-TypeError: Object of type 'bytes' is not JSON serializable
-2019-05-05 00:39:52,978 [Thread-2:8888] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1672, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 744, in get_changelist_instance
+    sortable_by,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 405, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 135, in get_filters
+    self.model, self.model_admin, field_path=field_path,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 159, in create
+    return list_filter_class(field, request, params, model, model_admin, field_path=field_path)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 170, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 201, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\fields\__init__.py", line 831, in get_choices
+    for x in rel_model._default_manager.complex_filter(limit_choices_to).order_by(*ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 274, in __iter__
+    self._fetch_all()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'plant.subject' doesn't exist")
+2019-05-13 01:29:28,255 [Thread-2:15844] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/vote/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'rank.subject_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -485,16 +1029,101 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 20, in tf_plant
-    result = json.loads(data)
-  File "D:\development\Python\lib\json\__init__.py", line 354, in loads
-    return _default_decoder.decode(s)
-  File "D:\development\Python\lib\json\decoder.py", line 339, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "D:\development\Python\lib\json\decoder.py", line 357, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-2019-05-05 00:41:49,565 [Thread-2:13412] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1672, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 744, in get_changelist_instance
+    sortable_by,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 405, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\views\main.py", line 135, in get_filters
+    self.model, self.model_admin, field_path=field_path,
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 159, in create
+    return list_filter_class(field, request, params, model, model_admin, field_path=field_path)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 170, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\filters.py", line 201, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\fields\__init__.py", line 831, in get_choices
+    for x in rel_model._default_manager.complex_filter(limit_choices_to).order_by(*ordering)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 274, in __iter__
+    self._fetch_all()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1054, "Unknown column 'rank.subject_id' in 'field list'")
+2019-05-13 02:47:03,290 [Thread-3:4264] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/subject/add/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xE6\\xB4\\xBB\\xE5\\x8A\\x9B' for column 'name' at row 1")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -502,16 +1131,97 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 20, in tf_plant
-    result = json.loads(data)
-  File "D:\development\Python\lib\json\__init__.py", line 354, in loads
-    return _default_decoder.decode(s)
-  File "D:\development\Python\lib\json\decoder.py", line 339, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "D:\development\Python\lib\json\decoder.py", line 357, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-2019-05-05 00:42:24,233 [Thread-2:13412] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1634, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1561, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1088, in save_model
+    obj.save()
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "D:\development\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1332, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xE6\\xB4\\xBB\\xE5\\x8A\\x9B' for column 'name' at row 1")
+2019-05-13 02:48:10,050 [Thread-3:4264] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/subject/add/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xE5\\x93\\x88\\xE5\\x93\\x88...' for column 'name' at row 1")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -519,16 +1229,97 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 20, in tf_plant
-    result = json.loads(data)
-  File "D:\development\Python\lib\json\__init__.py", line 354, in loads
-    return _default_decoder.decode(s)
-  File "D:\development\Python\lib\json\decoder.py", line 339, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "D:\development\Python\lib\json\decoder.py", line 357, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-2019-05-05 01:02:17,076 [Thread-2:8436] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/tf/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1634, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1561, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1088, in save_model
+    obj.save()
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "D:\development\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1332, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xE5\\x93\\x88\\xE5\\x93\\x88...' for column 'name' at row 1")
+2019-05-13 02:50:35,784 [Thread-3:4264] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/user/add/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1267, "Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -536,12 +1327,78 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in tf_plant
-    path = tmp_dir + str(uuid.uuid4()) + os.path.splitext(img_file)[-1]
-  File "D:\development\Python\lib\ntpath.py", line 224, in splitext
-    p = os.fspath(p)
-TypeError: expected str, bytes or os.PathLike object, not InMemoryUploadedFile
-2019-05-05 01:52:38,706 [Thread-9:10200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1634, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1554, in _changeform_view
+    form_validated = form.is_valid()
+  File "D:\development\Python\lib\site-packages\django\forms\forms.py", line 185, in is_valid
+    return self.is_bound and not self.errors
+  File "D:\development\Python\lib\site-packages\django\forms\forms.py", line 180, in errors
+    self.full_clean()
+  File "D:\development\Python\lib\site-packages\django\forms\forms.py", line 383, in full_clean
+    self._post_clean()
+  File "D:\development\Python\lib\site-packages\django\forms\models.py", line 409, in _post_clean
+    self.validate_unique()
+  File "D:\development\Python\lib\site-packages\django\forms\models.py", line 418, in validate_unique
+    self.instance.validate_unique(exclude=exclude)
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 980, in validate_unique
+    errors = self._perform_unique_checks(unique_checks)
+  File "D:\development\Python\lib\site-packages\django\db\models\base.py", line 1084, in _perform_unique_checks
+    if qs.exists():
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 766, in exists
+    return self.query.has_results(using=self.db)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 522, in has_results
+    return compiler.has_results()
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1067, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1267, "Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='")
+2019-05-13 02:55:19,238 [Thread-3:4264] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/rank/add/
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -549,10 +1406,28 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
-2019-05-05 01:53:18,908 [Thread-9:10200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1634, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1565, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 810, in log_addition
+    object_repr=str(object),
+TypeError: __str__ returned non-string (type Subject)
+2019-05-13 03:00:46,698 [Thread-3:11140] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/rank/add/
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -560,10 +1435,50 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
-2019-05-05 01:53:34,699 [Thread-9:10200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1634, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1565, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 810, in log_addition
+    object_repr=str(object),
+  File "D:\workspace\workspace-python\plant\application\models.py", line 199, in __str__
+    return Subject.objects.filter(id=self.subject).first().name
+  File "D:\development\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 892, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 910, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 1290, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 1318, in _add_q
+    split_subq=split_subq, simple_col=simple_col,
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 1251, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 1116, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\development\Python\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\development\Python\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\development\Python\lib\site-packages\django\db\models\fields\__init__.py", line 966, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'Subject'
+2019-05-13 03:03:25,174 [Thread-2:15776] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/rank/add/
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -571,10 +1486,50 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
-2019-05-05 01:56:13,823 [Thread-9:10200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1634, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1565, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 810, in log_addition
+    object_repr=str(object),
+  File "D:\workspace\workspace-python\plant\application\models.py", line 199, in __str__
+    return Subject.objects.filter(id=self.subject).first()
+  File "D:\development\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 892, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 910, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 1290, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 1318, in _add_q
+    split_subq=split_subq, simple_col=simple_col,
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 1251, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\query.py", line 1116, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\development\Python\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\development\Python\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\development\Python\lib\site-packages\django\db\models\fields\__init__.py", line 966, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'Subject'
+2019-05-13 03:05:53,782 [Thread-3:15364] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/rank/add/
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -582,10 +1537,53 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
-2019-05-05 01:56:21,270 [Thread-9:10200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1634, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1565, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 810, in log_addition
+    object_repr=str(object),
+TypeError: __str__ returned non-string (type Subject)
+2019-05-13 03:43:06,881 [Thread-3:16428] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/rank/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'rank.name' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -593,10 +1591,85 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
-2019-05-05 01:56:39,505 [Thread-9:10200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1790, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 256, in __len__
+    self._fetch_all()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1054, "Unknown column 'rank.name' in 'field list'")
+2019-05-13 03:43:18,643 [Thread-3:16428] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/application/rank/
+Traceback (most recent call last):
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'rank.name' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -604,83 +1677,56 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
-2019-05-05 01:57:31,109 [Thread-9:10200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
-2019-05-05 01:59:38,531 [Thread-9:10200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
-2019-05-05 02:01:16,422 [Thread-9:10200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
-2019-05-05 02:02:57,646 [Thread-9:10200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
-2019-05-05 02:03:06,345 [Thread-9:10200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
-2019-05-05 02:03:07,543 [Thread-9:10200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
-2019-05-05 02:32:54,977 [Thread-23:3104] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /tf/predictions/
-Traceback (most recent call last):
-  File "D:\development\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "D:\development\Python\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "D:\workspace\workspace-python\plant\tf\views.py", line 17, in predictions
-    path = tmp_dir + str(uuid.uuid4()) + '.' + img_file.name.split('.')[-1]
-AttributeError: 'NoneType' object has no attribute 'name'
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\development\Python\lib\site-packages\django\contrib\admin\options.py", line 1790, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 256, in __len__
+    self._fetch_all()
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\development\Python\lib\site-packages\django\db\models\query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\development\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1097, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\development\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\development\Python\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\development\Python\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\development\Python\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\development\Python\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\development\Python\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1054, "Unknown column 'rank.name' in 'field list'")

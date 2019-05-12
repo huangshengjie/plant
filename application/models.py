@@ -172,9 +172,7 @@ class Photo(models.Model):
 # 排行榜
 class Rank(models.Model):
     id = models.AutoField(verbose_name='id', primary_key=True, max_length=11)
-    subject = models.CharField(verbose_name='主题', max_length=20)
-    title = models.TextField(verbose_name='标题', default='')
-    content = models.TextField(verbose_name='内容', default='')
+    name = models.CharField(verbose_name='排行榜', max_length=10, default='')
 
     class Meta:
         db_table = 'rank'
@@ -182,7 +180,7 @@ class Rank(models.Model):
         verbose_name_plural = '排行榜'
 
     def __str__(self):
-        return self.subject
+        return self.name
 
 
 # 投票

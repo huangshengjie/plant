@@ -13,6 +13,7 @@ urlpatterns = [
     path('new_plant/', views.new_plant, name='new_plant'),
     path('plant_detail/<int:plant_id>/', views.plant_detail, name='plant_detail'),
     path('new_gallery/', views.new_gallery, name='new_gallery'),
+    path('gallery_detail/<int:gallery_id>/', views.gallery_detail, name='gallery_detail'),
     path('user_update/', views.user_update, name='user_update'),
     path('news/', views.news, name='news'),
     path('news_content/', views.news_content, name='news_content'),

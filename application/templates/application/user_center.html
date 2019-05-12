@@ -89,7 +89,7 @@
 
             <div style="display: flex; margin-top: 20px; width: 200px">
                 {% for item in plants %}
-                    <a href="{% url 'plant_detail' item.id%}">
+                    <a href="{% url 'plant_detail' item.id %}">
                         <div style="margin-right: 15px">
                             <img src="/static/{{ item.avatar }}" style="width: 200px;height: 200px">
                             <p style="color: #000000">{{ item.name }}</p>
@@ -142,7 +142,11 @@
 
             <ul>
                 {% for item in gallery %}
-                    <li>{{ item.name }}</li>
+                    <a href="{% url 'gallery_detail' item.id %}">
+                        <div style="margin-right: 15px">
+                            <p style="color: #000000">{{ item.name }}</p>
+                        </div>
+                    </a>
                 {% endfor %}
             </ul>
         </div>

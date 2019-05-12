@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import *
 
+admin.site.site_header = "植物管家后台系统"
+
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
@@ -81,9 +83,9 @@ class VoteAdmin(admin.ModelAdmin):
 @admin.register(Rank)
 class RankAdmin(admin.ModelAdmin):
     list_per_page = 10
-    list_display = ['id', 'subject', 'title', 'content']
-    list_filter = ['subject']
-    search_fields = ['subject']
+    list_display = ['id', 'name']
+    list_filter = ['name']
+    search_fields = ['name']
 
 
 @admin.register(Category)

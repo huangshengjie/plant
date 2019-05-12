@@ -88,12 +88,12 @@ def notify_content(request):
 
 
 def rank(request):
-    ranks = Rank.objects.all()
-    first_rank = ranks.first()
-
+    rank_ = Rank.objects.all()
     votes = Vote.objects.all()
 
-    context = {'ranks': ranks, 'first_rank': first_rank, 'votes': votes}
+    tab = rank_.first().id
+
+    context = {'ranks': rank_, 'votes': votes, 'tab': tab}
     return render(request, 'application/rank.html', context)
 
 
@@ -116,7 +116,7 @@ def user_center(request):
         user_gallery = Gallery.objects.filter(user=user_id).all()
 
         context = {'user': user,
-                   'plants': plants,
+                   'plants': user_plants,
                    'plant_category': plant_category,
                    'user_plant': user_plants,
                    'gallery': user_gallery}
@@ -188,6 +188,13 @@ def new_gallery(request):
     Gallery.objects.create(user_id=user_id, plant_id=plant_id, name=name, desc=desc, date=date)
 
     return redirect('user_center')
+
+
+def gallery_detail(request, gallery_id):
+    gallery_c = Gallery.objects.filter(id=gallery_id).first()
+
+    context = {'gallery': gallery_c}
+    return render(request, 'application/user_gallery.html', context)
 
 
 def sign_out(request):
